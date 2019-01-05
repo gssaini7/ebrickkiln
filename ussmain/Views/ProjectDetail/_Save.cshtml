@@ -1,0 +1,248 @@
+﻿@model R.BusinessEntities.ProjectDetailEntityModel
+
+<style>
+
+    #adddeliverables {
+    position: absolute;
+    right: 24px;
+    top: 27px;
+    }
+    .over {
+   background-color: #808080;
+    height: 90%;
+    position: absolute;
+    top: 19px;
+    width: 90%;
+    }
+</style>
+
+@using (Html.BeginForm("save", "ProjectDetail", FormMethod.Post, new { id = "baseForm" }))
+{
+    if (Model != null && Model.amtdtid > 0)
+    {
+    @Html.HiddenFor(a => a.amtdtid)
+    }
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Save Project Detail</h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        @Html.DisplayNameFor(a => a.projectname)
+
+                        @Html.TextBoxFor(a => a.projectname, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(a => a.projectname)
+
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        @Html.DisplayNameFor(a => a.projecttype)
+
+                        @Html.TextBoxFor(a => a.projecttype, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(a => a.projecttype)
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        @Html.DisplayNameFor(a => a.projectcost)
+
+                        @Html.TextBoxFor(a => a.projectcost, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(a => a.projectcost)
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        @Html.DisplayNameFor(a => a.projectadvance)
+
+                        @Html.TextBoxFor(a => a.projectadvance, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(a => a.projectadvance)
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        @Html.DisplayNameFor(a => a.projectpending)
+
+                        @Html.TextBoxFor(a => a.projectpending, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(a => a.projectpending)
+                    </div>
+                </div></div>
+            <div class="row">
+
+                <div class="col-md-3 hidden">
+                    <div class="form-group">
+                       Add Deliverables
+                      <a href="#"  id="adddeliverables">  <i class="fa fa-plus" aria-hidden="true"></i></a>
+
+                        <input type="text" id="adddeliverablestext" class="form-control"/>
+
+                        
+                    </div>
+                </div>
+
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        @Html.DisplayNameFor(a => a.projectdeliverables)
+
+                        @Html.TextAreaFor(a => a.projectdeliverables, new { @class = "form-control formlist" })
+                        @Html.ValidationMessageFor(a => a.projectdeliverables)
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        @Html.DisplayNameFor(a => a.projectdeliverablespending)
+
+                        @Html.TextAreaFor(a => a.projectdeliverablespending, new { @class = "form-control formlist" })
+                        @Html.ValidationMessageFor(a => a.projectdeliverablespending)
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        @Html.DisplayNameFor(a => a.projectdeliverablescompleted)
+
+                        @Html.TextAreaFor(a => a.projectdeliverablescompleted, new { @class = "form-control formlist" })
+                        @Html.ValidationMessageFor(a => a.projectdeliverablescompleted)
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="panel-footer">
+            <input type="submit" value="Save" class="btn btn-success" />
+            <a href="#" onclick="loadblankform('/ProjectDetail/save/0')">Clear</a>
+
+        </div>
+    </div>
+}
+
+<script>
+    $(function () {
+        
+        calculatepending();
+        $("#projectcost").on("blur", function () {
+            calculatepending();
+        });
+        $("#projectadvance").on("blur", function () {
+            
+            calculatepending();
+        });
+
+        //getDeliverables();
+        $("#adddeliverables").on("click", function () {
+            var deliverablesadd = $("#adddeliverablestext").val();
+            if (deliverablesadd != "")
+            {
+                var olddelvireables = $("#projectdeliverables").val();
+                if (olddelvireables == "")
+                    $("#projectdeliverables").val(deliverablesadd + ";");
+                else
+                    $("#projectdeliverables").val(olddelvireables+deliverablesadd + ";" );
+            }
+            $("#adddeliverablestext").val("");
+            //getDeliverables();
+
+        });
+
+    });
+
+    function calculatepending()
+    {
+        var totalcost = $("#projectcost").val();
+        var advance = $("#projectadvance").val();
+        var pendingamt = totalcost - advance;
+        $("#projectpending").val(pendingamt);
+    }
+
+    function getDeliverables()
+    {
+        
+
+        var delvireables = $("#projectdeliverables").val();
+
+        $("#projectdeliverablespending").val("");
+
+        var arraydelv = $.map(delvireables.split(";"), $.trim);
+        arraydelv = jQuery.grep(arraydelv, function (n) { return (n); });
+
+        var arraypending = arraydelv;
+        var delvireableslength = arraydelv.length;
+
+        if (delvireableslength == 1)
+            return;
+
+        var completed = $("#projectdeliverablescompleted").val();
+        var arraycompleted = $.map(completed.split(";"), $.trim);
+        arraycompleted = jQuery.grep(arraycompleted, function (n) { return (n); });
+
+        var completedlength = arraycompleted.length;
+
+        for (var i = 0; i < completedlength; i++)
+        {
+            var isCompleted = jQuery.inArray(arraycompleted[i], arraydelv);
+          
+            if (isCompleted != -1) {
+                arraypending.splice($.inArray(arraycompleted[i].trim(), arraypending), 1);
+                //var oldpending = $("#projectdeliverablespending").val();
+                //if (oldpending == "")
+                //    $("#projectdeliverablespending").val(arraydelv[i] + "; ");
+                //else
+                //    $("#projectdeliverablespending").val(oldpending + arraydelv[i] + "; ");
+            }
+        }
+
+        $.each(arraypending, function (key, value) {
+            var oldpending = $("#projectdeliverablespending").val();
+            if (oldpending == "")
+                $("#projectdeliverablespending").val(value + ";");
+            else
+                $("#projectdeliverablespending").val(oldpending + value + ";");
+        });
+
+        formlist(arraydelv, arraycompleted, arraypending);
+       
+
+        //alert(arraypending);
+
+
+        //for (var i = 0; i < delvireableslength-1; i++)
+        //{
+        //    var isCompleted = false;
+
+        //    for (var j = 0; j < completedlength-1; j++) {
+                
+        //     alert(jQuery.inArray(arraycompleted[j].trim(), arraydelv));
+        //        //if (arraydelv[i] == arraycompleted[j])
+        //        //{
+        //        //    alert('k');
+        //        //    isCompleted = true;
+        //        //}
+        //    }
+
+        //    //if (!isCompleted) {
+        //    //    var oldpending = $("#projectdeliverablespending").val();
+        //    //    if (oldpending == "")
+        //    //        $("#projectdeliverablespending").val(arraydelv[i] + "; ");
+        //    //    else
+        //    //        $("#projectdeliverablespending").val(oldpending + arraydelv[i] + "; ");
+        //    //}
+            
+        //}
+    }
+
+    function formlist(total,completed,pending)
+    {
+        $("<div class='over'></div>").insertAfter($(".formlist"));
+
+        $.each(total, function (key, value) {
+            $(".over").append("<p>" + value + "</p>");
+        });
+
+       
+    }
+
+</script>
+

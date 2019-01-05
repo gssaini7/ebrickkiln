@@ -1,0 +1,83 @@
+﻿@model R.BusinessEntities.CouponEntity
+
+
+@using (Html.BeginForm("save", "Coupon", FormMethod.Post, new { id = "baseForm" }))
+{
+    if (Model != null && Model.couponid > 0)
+    {
+    @Html.HiddenFor(a => a.couponid)
+    }
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Save Coupon</h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                     @Html.DisplayNameFor(a=>a.couponcode)<a href="#" id="generatecoupon" class="pull-right"><i class="fa fa-magic" aria-hidden="true"></i></a>
+
+                @Html.TextBoxFor(a => a.couponcode, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.couponcode)
+                    
+                </div>
+            </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                     @Html.DisplayNameFor(a=>a.camount)
+
+                @Html.TextBoxFor(a => a.camount, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.camount)
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    @Html.DisplayNameFor(a=>a.cmsgforuser)
+
+                @Html.TextAreaFor(a => a.cmsgforuser, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.cmsgforuser)
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                     @Html.DisplayNameFor(a=>a.cAdminRemarks)
+
+                @Html.TextAreaFor(a => a.cAdminRemarks, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.cAdminRemarks)
+                </div>
+            </div>
+                </div>
+            <div class="row">
+                 <div class="col-md-3">
+            <div class="form-group">
+                <label>Coupon Blocked</label>
+                                @Html.EditorFor(a => a.cblocked)
+                @Html.ValidationMessageFor(a => a.cblocked)
+
+            </div>
+                </div >
+          </div>
+        </div>
+        <div class="panel-footer">
+            <input type="submit" value="Save" class="btn btn-success" />
+            <a href="#" onclick="loadblankform('/Coupon/save/0')">Clear</a>
+
+        </div>
+    </div>
+}
+
+<script>
+    $(function () {
+        $("#generatecoupon").click(function () {
+        
+            var rstr = Math.random().toString(36).substr(2, 8);
+            $("#couponcode").val(rstr);
+        });
+
+
+
+
+    });
+
+</script>

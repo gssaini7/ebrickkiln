@@ -1,0 +1,71 @@
+﻿@model R.BusinessEntities.Manager.ProjectEntity
+
+
+@using (Html.BeginForm("save", "Project", FormMethod.Post, new { id = "baseForm" }))
+{
+    if (Model != null && Model.managerid != null)
+    {
+    @Html.HiddenFor(a => a.managerid)
+    }
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Save Project
+                 <a data-toggle="collapse" data-target="#collapseOne" 
+           href="#collapseOne" class="pull-right ">
+                     <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    </a>
+            </h3>
+        </div>
+           <div id="collapseOne" class="panel-collapse collapse ">
+
+        <div class="panel-body">
+            @*<div class="col-md-3">
+                <div class="form-group">
+                    <label>Project </label><a href="/Project/Index" class="pull-right dynamicpopupmodal"><i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i></a>
+                    
+                   
+                    @Html.DropDownListFor(x => x.projectid, Enumerable.Empty<SelectListItem>(), "-Select-", new { @class="form-control selectpicker"})
+                    @Html.ValidationMessageFor(a => a.projectid)
+                </div>
+            </div>*@
+            @*<div class="col-md-3">
+                <div class="form-group">
+                    <label>Assigned To</label><a href="/User/Index" class="pull-right dynamicpopupmodal"><i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i></a>
+                    @Html.DropDownListFor(x => x.AssignedTo, Enumerable.Empty<SelectListItem>(), "-Select-", new { @class="form-control selectpicker"}) 
+                    @Html.ValidationMessageFor(a => a.AssignedTo)
+                </div>
+            </div>*@
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Project Name</label>
+                    @Html.TextBoxFor(a => a.projectname, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(a => a.projectname)
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Project Description</label>
+                    @Html.TextAreaFor(a => a.projectdescription, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(a => a.projectdescription)
+                </div>
+            </div>
+            @*<div class="col-md-3">
+                <div class="form-group">
+                    <label>Cost</label>
+                    @Html.TextBoxFor(a => a.Cost, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(a => a.Cost)
+                </div>
+            </div>*@
+            
+        </div>
+        <div class="panel-footer">
+            <input type="submit" value="Save" class="btn btn-success" />
+            <a href="#" onclick="loadblankform('/Manage/Project/save/')">Clear</a>
+
+        </div>
+               </div>
+    </div>
+}
+
+

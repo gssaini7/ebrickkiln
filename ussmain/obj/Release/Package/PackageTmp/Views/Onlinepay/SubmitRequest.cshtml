@@ -1,0 +1,235 @@
+﻿@model ussmain.Models.PaymentContact
+
+@{
+    ViewBag.Title = "Payment Details";
+    Layout = "~/Views/Shared/_LayoutWithLink.cshtml";
+}
+
+<section id="ussebk-explore">
+    <div class="container">
+        <div class="row" id="ussebk-rquestform">
+            @using (Html.BeginForm("SubmitRequest", "Onlinepay", FormMethod.Post, new { @id = "formpayeasy" }))
+            {
+                
+                @Html.AntiForgeryToken() 
+                <div class="text-center">
+                    <h2>Pay Online</h2>
+                </div>
+                <div class="">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading" style="background-color: #b73222;">Details</div>
+                        <div class="panel-body">
+                            <div class="col-md-6">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.pcName)
+                                        @Html.TextBoxFor(model => model.pcName, new { @class = "form-control", @placeholder = "Name" })
+                                        @Html.ValidationMessageFor(model => model.pcName)
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.pcEmail)
+                                        @Html.TextBoxFor(model => model.pcEmail, new { @class = "form-control", @placeholder = "Email" })
+                                        @Html.ValidationMessageFor(model => model.pcEmail)
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.pcMobile)
+                                        @Html.TextBoxFor(model => model.pcMobile, new { @class = "form-control", @placeholder = "Mobile" })
+                                        @Html.ValidationMessageFor(model => model.pcMobile)
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.pcCity)
+                                        @Html.TextBoxFor(model => model.pcCity, new { @class = "form-control", @placeholder = "City" })
+                                        @Html.ValidationMessageFor(model => model.pcCity)
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.pcAddress)
+                                        @Html.TextBoxFor(model => model.pcAddress, new { @class = "form-control", @placeholder = "Address" })
+                                        @Html.ValidationMessageFor(model => model.pcAddress)
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.pcZip)
+                                        @Html.TextBoxFor(model => model.pcZip, new { @class = "form-control", @placeholder = "Pin code" })
+                                        @Html.ValidationMessageFor(model => model.pcZip)
+                                    </div>
+                                </div>
+                                 <div class="col-md-6">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.pcAmount)
+                                        @Html.TextBoxFor(model => model.pcAmount, new { @class = "form-control", @placeholder = "Amount" })
+                                        @Html.ValidationMessageFor(model => model.pcAmount)
+                                    </div>
+                                </div>
+                                @*<div class="col-md-6">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.pcCoupon)
+                                        @Html.TextBoxFor(model => model.pcCoupon, new { @class = "form-control", @placeholder = "Enter coupon code", autocomplete="off" })
+                                        <a href="#" class="btn btn-xs btn-success" id="applycouponcode">Apply Coupon</a>
+                                    </div>
+                                </div>*@
+                                @*<div class="col-md-6">
+                                    <br />
+                                    <p id="couponmessage" style="font-size:small;display:none;">
+                                    <span >
+                                    </span>
+                                    <a href="#" class="" id="removecoupon" style="font-size:15px;" >&times;</a>
+                                    </p>
+                                       
+                                    
+                                </div>*@
+
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        @*<input type="submit" value="Pay NOW!" class="btn btn-lg btn-block btn-ebktheme" onclick="javascript: return confirm('Are you sure you want to submit details?')"/>*@
+                                        <input type="submit" value="Pay NOW!" class="btn btn-lg btn-block btn-ebktheme" onclick="payonlineconfirm();" />
+
+                                    </div>
+
+                                    @*<a class="btn btn-lg btn-block btn-ebktheme" href="#">Pay NOW!</a>*@
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+
+                                <div class="panel price panel-red">
+                                    <div class="panel-heading  text-center">
+                                        <img src="~/Images/logo_bk.jpg" />
+                                        @*<h3>PRO PLAN</h3>*@
+                                    </div>
+                                    <div class="panel-body text-center">
+                                        <p class="lead" style="font-size: 40px" id="oldamount"><strong>Rs20,000</strong></p>
+                                        <p class="lead" style="font-size: 40px; display:none;" id="newamount"><strong></strong>
+                                            <br />
+                                        <span id="messageforuser" style="font-size: 20px;" class="text-info"></span>
+                                        </p>
+                                        
+                                    </div>
+                                    @*<ul class="list-group list-group-flush text-center">
+							<li class="list-group-item"><i class="icon-ok text-danger"></i>  Single Company or Kiln</li>
+							<li class="list-group-item"><i class="icon-ok text-danger"></i> Secure and Reliable</li>
+							<li class="list-group-item"><i class="icon-ok text-danger"></i> Easy to access</li>
+						</ul>*@
+                                    @*<div class="panel-footer">
+							<a class="btn btn-lg btn-block btn-ebktheme" href="#">Pay NOW!</a>
+						</div>*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+@*<div class="col-md-6">
+                <div class="panel panel-primary">
+                            <div class="panel-heading" style="background-color: #b73222;">Product Details</div>
+                            <div class="panel-body">
+                                <!-- PRICE ITEM -->
+					<div class="panel price panel-red">
+						<div class="panel-heading  text-center">
+<img src="~/Images/logo_bk.jpg"  />
+					
+						</div>
+						<div class="panel-body text-center">
+							<p class="lead" style="font-size:40px"><strong>Rs20,000</strong></p>
+						</div>
+						<ul class="list-group list-group-flush text-center">
+							<li class="list-group-item"><i class="icon-ok text-danger"></i>  Single Company or Kiln</li>
+							<li class="list-group-item"><i class="icon-ok text-danger"></i> Secure and Reliable</li>
+							<li class="list-group-item"><i class="icon-ok text-danger"></i> Easy to access</li>
+						</ul>
+						<div class="panel-footer">
+							<a class="btn btn-lg btn-block btn-ebktheme" href="#">Pay NOW!</a>
+						</div>
+					</div>
+					<!-- /PRICE ITEM -->
+                              
+
+                            </div>
+                        </div>   
+    </div>*@
+            }
+        </div>
+    </div>
+</section>
+@section scripts{
+    <script type="text/javascript">
+       
+        function payonlineconfirm() {
+            var $form = $('#formpayeasy');
+            $.validator.unobtrusive.parse($form);
+            $form.validate();
+            if (!$form.valid()) {
+                return;
+            }
+            return confirm('Are you sure you want to submit details?')
+        }
+
+
+       @* $(function () {
+            $("#applycouponcode").click(function () {
+
+                var ipval = $("#pcCoupon").val().trim();
+                if (ipval == '') {
+                    alert('Enter coupon code.');
+                    return false;
+                }
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("ApplyCouponCode", "OnlinePay")',
+                    //contentType: "application/json; charset=utf-8",
+                    data: { cvalue: ipval },
+                    dataType: "json",
+                    success: function (result)
+                    {
+                        if (result.status) {
+                            $("#couponmessage span").html(result.couponmessage).removeClass().addClass("text-success");
+                         
+                            $("#oldamount").addClass("hidden");
+
+                            //$("#oldamount").wrap("<s></s>");
+                            $("#newamount").css("display", "block").children("strong").html("Rs" + result.newamount);
+                            $("#newamount").children("span#messageforuser").html(result.message);
+                        }
+                        else {
+                            $("#couponmessage span").html(result.couponmessage).removeClass().addClass("text-danger");
+
+                            //if ($("#oldamount").parent().is("s")) {
+                            //    $("#oldamount").unwrap();
+                            //}
+                            $("#newamount").css("display", "none");
+                            $("#oldamount").removeClass("hidden");
+
+                        }
+
+                        $("#applycouponcode").addClass("hidden");
+                        //$("#pcCoupon").attr("disabled", "true");
+                        $("#couponmessage").css("display", "block");
+                    },
+                    error: function () { alert('Coupon code not applied.'); },
+                });
+            });
+
+            $("#removecoupon").click(function () {
+                $("#applycouponcode").removeClass("hidden");
+                //$("#pcCoupon").removeAttr("disabled");
+                $("#pcCoupon").val("");
+                $("#couponmessage").css("display", "none");
+                //if ($("#oldamount").parent().is("s")) {
+                //    $("#oldamount").unwrap();
+                //}
+                $("#oldamount").removeClass("hidden");
+
+                $("#newamount").css("display", "none");
+            });
+        });*@
+
+       
+    </script>
+}

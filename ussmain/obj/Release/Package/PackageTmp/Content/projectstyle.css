@@ -1,0 +1,309 @@
+﻿body {
+}
+table.dataTable thead th {
+    position: relative;
+    background-image: none !important;
+}
+ 
+table.dataTable thead th.sorting:after,
+table.dataTable thead th.sorting_asc:after,
+table.dataTable thead th.sorting_desc:after {
+    position: absolute;
+    top: 12px;
+    right: 8px;
+    display: block;
+    font-family: FontAwesome;
+}
+table.dataTable thead th.sorting:after {
+    content: "\f0dc";
+    color: #ddd;
+    font-size: 0.8em;
+    padding-top: 0.12em;
+}
+table.dataTable thead th.sorting_asc:after {
+    content: "\f0de";
+}
+table.dataTable thead th.sorting_desc:after {
+    content: "\f0dd";
+}
+
+
+#myDatatable_filter input[type="search"]+i{
+    position: absolute;
+top: 7px;
+right: 18px;
+
+}
+a.popup {
+    margin:5px;
+}
+tbody tr.odd.selected, tbody tr.even.selected {
+    background-color: #acbad4;
+}
+.field-validation-error {
+color:red;
+}
+
+.topbarcolor {
+    background-color:#7E130B !important;
+   
+}
+
+#ussebk-header {
+  /*position: absolute;
+  z-index: 99;
+  width: 100%;
+  opacity: 1;
+  top: 0;*/
+}
+#ussebk-header .navbar {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+#ussebk-header #navbar .navbar-right, #ussebk-header #gsnavbar .navbar-right {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 992px) {
+  #ussebk-header #navbar .navbar-right, #ussebk-header #gsnavbar .navbar-right {
+    margin-right: -15px;
+  }
+}
+#ussebk-header #navbar li a, #ussebk-header #gsnavbar li a {
+  font-family: "PT Sans", Arial, serif;
+  color: #fff;
+  position: relative;
+  font-size: 16px;
+  font-weight: 400;
+}
+@media screen and (max-width: 992px) {
+  #ussebk-header #navbar li a, #ussebk-header #gsnavbar li a {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+}
+#ussebk-header #navbar li a span, #ussebk-header #gsnavbar li a span {
+  position: relative;
+  display: block;
+  padding-bottom: 2px;
+}
+#ussebk-header #navbar li a span:before, #ussebk-header #gsnavbar li a span:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  -moz-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  -o-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  -ms-transition: all 0.3s ease-in-out 0s;
+  -o-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+#ussebk-header #navbar li a:hover, #ussebk-header #gsnavbar li a:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+#ussebk-header #navbar li a:hover span:before, #ussebk-header #gsnavbar li a:hover span:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  -moz-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  -o-transform: scaleX(1);
+  transform: scaleX(1);
+}
+#ussebk-header #navbar li.active a , #ussebk-header #gsnavbar li.active a {
+  background: transparent;
+  background: none;
+}
+@media screen and (max-width: 480px) {
+  #ussebk-header #navbar li.active a, #ussebk-header #gsnavbar li.active a {
+    color: #b73222;
+  }
+}
+#ussebk-header #navbar li.active a span:before, #ussebk-header #gsnavbar li.active a span:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  background-color: #b73222;
+}
+@media screen and (max-width: 480px) {
+  #ussebk-header #navbar li.active a span:before,  #ussebk-header #gsnavbar li.active a span:before {
+    background-color: transparent;
+  }
+}
+#ussebk-header #navbar li.call-to-action a, #ussebk-header #gsnavbar li.call-to-action a {
+  border: 2px solid #b73222;
+  padding: 5px 10px 3px 10px;
+  margin: 12px 0 0 0px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  border-radius: 30px;
+}
+#ussebk-header #navbar li.call-to-action a:hover, #ussebk-header #gsnavbar li.call-to-action a:hover {
+  background-color: #b73222;
+  color: #fff;
+}
+#ussebk-header #navbar li.call-to-action a span:before , #ussebk-header #gsnavbar li.call-to-action a span:before {
+  background-color: transparent;
+}
+#ussebk-header .navbar-brand {
+  float: left;
+  display: block;
+  /*font-size: 24px;*/
+  font-weight: 700;
+  padding-left: 0;
+  color: #fff;
+  /*text-transform: uppercase;*/
+  letter-spacing: 3px;
+  /*background: url(/Images/ebrickklin_logo.png) no-repeat;*/
+
+}
+.navbar-nav {
+   
+    margin-top: 10px;
+}
+#ussebk-header .navbar-brand > span {
+  color: #b73222;
+}
+@media screen and (max-width: 992px) {
+  #ussebk-header .navbar-brand {
+    padding-left: 10px !important;
+    padding-right: 0 !important;
+  }
+}
+#ussebk-header.navbar-fixed-top {
+  position: fixed !important;
+  background: #fff;
+  -webkit-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+  margin-top: 0px;
+  top: 0;
+}
+#ussebk-header.navbar-fixed-top .navbar-brand {
+  color: #fff;
+}
+#ussebk-header.navbar-fixed-top #navbar li a, #ussebk-header.navbar-fixed-top #gsnavbar li a {
+  color: #fff !important;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+#ussebk-header.navbar-fixed-top #navbar li a:hover, #ussebk-header.navbar-fixed-top #gsnavbar li a:hover {
+  color: #b73222;
+}
+#ussebk-header.navbar-fixed-top #navbar li.active a, #ussebk-header.navbar-fixed-top #gsnavbar li.active a {
+  color: #fff !important;
+}
+@media screen and (max-width: 768px) {
+  #ussebk-header.navbar-fixed-top #navbar li.active a  #ussebk-header.navbar-fixed-top #gsnavbar li.active a {
+    color: #b73222 !important;
+  }
+}
+#ussebk-header.navbar-fixed-top #navbar li.active a span:before, #ussebk-header.navbar-fixed-top #gsnavbar li.active a span:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  background-color: #b73222;
+}
+@media screen and (max-width: 768px) {
+  #ussebk-header.navbar-fixed-top #navbar li.active a span:before  #ussebk-header.navbar-fixed-top #gsnavbar li.active a span:before  {
+    background-color: transparent;
+  }
+}
+#ussebk-header.navbar-fixed-top #navbar li.call-to-action a, #ussebk-header.navbar-fixed-top #gsnavbar li.call-to-action a {
+  border: 2px solid #b73222;
+  padding: 5px 10px 3px 10px;
+  margin: 12px 0 0 0px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  border-radius: 30px;
+}
+#ussebk-header.navbar-fixed-top #navbar li.call-to-action a:hover, #ussebk-header.navbar-fixed-top #gsnavbar li.call-to-action a:hover {
+  background-color: #b73222;
+  color: #fff !important;
+}
+#ussebk-header.navbar-fixed-top #navbar li.call-to-action a span:before, #ussebk-header.navbar-fixed-top #gsnavbar li.call-to-action a span:before {
+  background-color: transparent;
+}
+#ussebk-header .navbar-default {
+  border: transparent;
+  background: #fff;
+  margin: 0;
+  padding-left: 50px;
+  padding-right: 50px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  border-radius: 0px;
+}
+@media screen and (max-width: 768px) {
+  #ussebk-header .navbar-default {
+    margin-top: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+#ussebk-header .navbar-default .brand-slogan {
+  margin: 28px 0 0 15px;
+  float: left;
+  letter-spacing: 2px;
+  color: #adadad;
+}
+#ussebk-header .navbar-default .brand-slogan em {
+  color: #b73222;
+  font-style: normal;
+}
+
+
+.logoff {
+margin-top:10px;
+}
+
+.dataTables_scrollBody thead {visibility: hidden;}
+
+tr.danger.selected td {
+background-color:#eda5a5 !important;
+}
+
+.gsddmenu   {
+padding:10px;
+background-color:#b73222;
+}
+
+.gsddmenu > li > form > a {
+    clear: both;
+    color: #333;
+    display: block;
+    font-weight: normal;
+    line-height: 1.42857;
+    padding: 3px 20px;
+    white-space: nowrap;
+}
+
+.gsddmenu > li > a:hover, .gsddmenu > li > form > a:hover  {
+    background-color:transparent;
+    text-decoration:none;
+}
+
+.gsddmenu > li.simpletext {
+    
+    color: #fff;
+}
+
+.dt-button-collection .active > a::before {
+    font-family: FontAwesome;
+    content:'\f00c';
+      margin-left: -12px;
+    margin-right: 5px;
+}

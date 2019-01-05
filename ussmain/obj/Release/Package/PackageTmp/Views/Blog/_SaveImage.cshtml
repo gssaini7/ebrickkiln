@@ -1,0 +1,61 @@
+﻿@model R.BusinessEntities.BlogModuleModel
+
+@*@{
+    
+    var imgname = Model.blogimage + ".jpg";
+    }*@
+
+@using (Html.BeginForm("SaveImage", "Blog", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    if (Model != null && Model.blogid > 0)
+    {
+    @Html.HiddenFor(a => a.blogid)
+    }
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Save Image
+                 <a data-toggle="collapse" data-target="#collapseOne" 
+           href="#collapseOne" class="pull-right ">
+                     <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    </a>
+            </h3>
+        </div>
+         <div id="collapseOne" class="panel-collapse  ">
+
+        <div class="panel-body">
+            
+          
+              @{ if(Model.blogimage==null)
+                 {
+
+             <div class="row " >
+       
+                  <div class="col-md-4">
+            <div class="form-group">
+                       <input type="file"  name="Uploaderfile" id="Uploaderfileid" />
+                 </div>
+                      </div>
+
+                 </div>
+                 }
+                
+                  }
+            
+            </div>
+              
+              
+        <div class="panel-footer text-right">
+            <a href="#" onclick="loadblankform('/blog/save/0')">Cancel</a>
+
+            <input type="submit" value="Save" class="btn btn-success" />
+
+        </div>
+             </div>
+    </div>
+
+    
+}
+
+
+

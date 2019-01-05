@@ -1,0 +1,233 @@
+﻿@model R.BusinessEntities.DescriptionModuleModel
+
+@* textbox with autocomplete *@
+
+@using (Html.BeginForm("save", "Description", FormMethod.Post, new { id = "popupForm" }))
+{
+    if (Model != null && Model.descriptionid > 0)
+    {
+    @Html.HiddenFor(a => a.descriptionid)
+    }
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Save Support Description</h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-3">
+                <div class="form-group ">
+                    <label>Title</label>
+                    
+                    @*@Html.DropDownListFor(x => x.desctitile, Enumerable.Empty<SelectListItem>(), "-Select-", new { @class="form-control selectpicker", @data_live_search="true", @data_live_search_style="begins"})*@
+                   @* @{if(Model==null){
+                    @Html.DropDownListFor(x => x.desctitile, Enumerable.Empty<SelectListItem>(), "-Select-", new { @class="form-control selectpicker"})
+                    }
+                    else{
+                        
+                    }
+                    }*@
+                    @*@Html.DropDownListFor(x => x.desctitile, Enumerable.Empty<SelectListItem>(), "-Select-", new { @class="form-control selectpicker"})*@
+                   
+                                         
+                    @Html.TextBoxFor(a => a.desctitile, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(a => a.desctitile)
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Category</label>
+                    @*@Html.DropDownListFor(x => x.desccategory, Enumerable.Empty<SelectListItem>(), "-Select-", new { @class="form-control selectpicker"})*@ 
+
+                    @Html.TextBoxFor(a => a.desccategory, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(a => a.desccategory)
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Video Link</label>
+                    @Html.TextBoxFor(a => a.descvideolink, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(a => a.descvideolink)
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Remarks</label>
+                    @Html.TextAreaFor(a => a.descanydescription, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(a => a.descanydescription)
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>For website</label>
+                    @foreach (var items in ussmain.StaticData.OurWebsiteList())
+                    {
+                        var isCheked = false;
+                        if (Model != null && Model.websitemodule != null)
+                        {
+                            var websl = Model.websitemodule.Split(',').Where(str => str != " ");
+                            foreach (string ci in websl)
+                            {
+                                if (ci.Trim() == items.Text)
+                                {
+                                    isCheked = true;
+                                    break;
+                                }
+                            }
+                        }
+                        @:<input type="checkbox" @(isCheked ? "checked" : "")   name="forwebsite" value="@items.Text">
+                
+                        @items.Text
+                
+                    }
+
+
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <input type="submit" value="Save" class="btn btn-success" />
+            <a href="#" onclick="loadblankform('/Description/save/0')">Clear</a>
+
+        </div>
+    </div>
+}
+<script>
+  $( function() {
+    var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+
+    //$("#desctitile").autocomplete({
+    //  source: availableTags
+    //});
+
+    $("#desctitile").autocomplete({
+        source: function (request, response) {
+            $.ajax({
+                url: "/Title/GetAll",
+                dataType: "json",
+                data: {
+                    term: request.term
+                },
+                success: function (data) {
+                    var list = [];
+                    $(data.data).each(function () {
+                        //alert(this.titlename);
+                        //response(this.titlename);
+                        list.push(this.titlename);
+                        });
+                    response(list);
+                }
+            });
+        },
+        minLength: 2,
+        select: function (event, ui) {
+            
+          console.log("Selected: " + ui.item.value + " aka " + ui.item.id);
+        }
+    });
+
+  } );
+    </script>
+@*<script>
+$(function() {
+    //$.getJSON('/Title/GetAll', function (result) {
+    //    var ddl = $('#desctitile');
+    //    ddl.empty();
+    //    //$(result.data).each(function () {
+    //    //    $(document.createElement('option'))
+    //    //        .attr('value', this.titleid)
+    //    //        .text(this.titlename)
+    //    //        .appendTo(ddl);
+    //    //});
+    //    blankDdl(ddl);
+    //    $.each(result.data, function (id, option) {
+    //        console.log(id);
+    //        ddl.append($('<option></option>').val(option.titleid).html(option.titlename));
+    //    });
+    //});
+    
+    FillDDTitle();
+    FillDDCategory();
+
+  
+});
+
+function FillDDTitle()
+{
+    $.getJSON('/Title/GetAll', function (result) {
+        var ddl = $('#desctitile');
+        
+        ddl.empty();
+        //$(result.data).each(function () {
+        //    $(document.createElement('option'))
+        //        .attr('value', this.titleid)
+        //        .text(this.titlename)
+        //        .appendTo(ddl);
+        //});
+        blankDdl(ddl);
+        $.each(result.data, function (id, option) {
+            ddl.append($('<option></option>').val(option.titleid).html(option.titlename));
+        });
+
+        var dbmodelval = '@(Model==null?0:Model.desctitile.Value)';
+        ddl.val(dbmodelval).attr("selected", "selected");
+       
+        
+        $('#desctitile').selectpicker({
+            liveSearch: true,
+            liveSearchPlaceholder: 'search...',
+            liveSearchStyle: 'contains',
+        });
+    });
+}
+
+function FillDDCategory() {
+    $.getJSON('/Category/GetAll', function (result) {
+        var ddl = $('#desccategory');
+        ddl.empty();
+        blankDdl(ddl);
+        $.each(result.data, function (id, option) {
+            ddl.append($('<option></option>').val(option.catid).html(option.catname));
+
+        });
+
+        //selected value from db
+        var dbmodelval = '@(Model==null?0:Model.desccategory.Value)';
+        ddl.val(dbmodelval).attr("selected", "selected");
+
+        $('#desccategory').selectpicker({
+            liveSearch: true,
+            liveSearchPlaceholder: 'search...',
+            liveSearchStyle: 'contains',
+        });
+    });
+}
+
+function blankDdl(ddltobblank) {
+    ddltobblank.html('');
+    ddltobblank.append($('<option></option>').val('').html("--Select--"));
+}
+
+</script>*@

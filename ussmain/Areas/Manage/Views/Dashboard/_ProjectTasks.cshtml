@@ -1,0 +1,14 @@
+﻿@model IEnumerable<R.BusinessEntities.Manager.TaskEntity>
+
+@{
+    if(Model!=null){
+    foreach(var tasks in Model)
+    {
+        <div>
+            @tasks.taskname
+       
+        </div>
+    }
+    }
+    
+    }

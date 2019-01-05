@@ -1,0 +1,24 @@
+﻿@model IEnumerable<R.BusinessEntities.Manager.TaskEntity>
+
+@{
+    ViewBag.Title = "Tasks";
+}
+<h1 class="text-center">@ViewBag.ProjectName</h1>
+<h2>Tasks</h2>
+@{
+    if(Model!=null){
+    foreach(var task in Model)
+    {
+        <div>
+        <h3>  @task.taskname</h3> 
+            <p>@task.taskdescription</p>
+            <p>@task.createdate</p>
+            <p>@task.AssignedUser.gsusername</p>
+
+        </div>
+    }
+    }
+    else{
+    <p>No tasks found.</p>
+    }
+    }

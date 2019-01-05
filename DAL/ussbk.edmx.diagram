@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0a6c1f3fdaaa4413babae1b677b6e559" Name="Diagram1" ZoomLevel="80">
+        <EntityTypeShape EntityType="ussdbModel.ta_ussbk_categoryMaster" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ussdbModel.ta_ussbk_clientrecord" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ussdbModel.ta_ussbk_Description" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ussdbModel.ta_ussbk_TitleMaster" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="ussdbModel.FK_ta_ussbk_Description_ta_ussbk_categoryMaster" />
+        <AssociationConnector Association="ussdbModel.FK_ta_ussbk_Description_ta_ussbk_TitleMaster" />
+        <EntityTypeShape EntityType="ussdbModel.TA_ussbk_Coupons" Width="1.5" PointX="7.125" PointY="3.625" />
+        <EntityTypeShape EntityType="ussdbModel.Ta_Manager" Width="1.5" PointX="11.375" PointY="6.25" />
+        <EntityTypeShape EntityType="ussdbModel.ta_ussbk_ProjectDetail" Width="1.5" PointX="11.25" PointY="9.25" />
+        <EntityTypeShape EntityType="ussdbModel.ta_blog" Width="1.5" PointX="3.375" PointY="5.75" />
+        <EntityTypeShape EntityType="ussdbModel.ta_blog_tags" Width="1.5" PointX="5.375" PointY="6.75" />
+        <EntityTypeShape EntityType="ussdbModel.ta_ussbk_client_comment" Width="1.5" PointX="0.75" PointY="7.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

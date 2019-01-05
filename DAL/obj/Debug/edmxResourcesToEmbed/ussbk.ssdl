@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ussdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ta_blog">
+    <Key>
+      <PropertyRef Name="blogid" />
+    </Key>
+    <Property Name="blogid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="blogtitle" Type="nvarchar" MaxLength="500" />
+    <Property Name="blogdescription" Type="ntext" />
+    <Property Name="blogimage" Type="varchar" MaxLength="200" />
+    <Property Name="blogdate" Type="datetime" Nullable="false" />
+    <Property Name="blogupdate" Type="datetime" Nullable="false" />
+    <Property Name="blogkeywords" Type="nvarchar" MaxLength="250" />
+    <Property Name="blogtags" Type="nvarchar" MaxLength="100" />
+    <Property Name="blogwebsite" Type="nvarchar" MaxLength="50" />
+    <Property Name="blogpublished" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ta_blog_tags">
+    <Key>
+      <PropertyRef Name="tagid" />
+    </Key>
+    <Property Name="tagid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tagname" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Ta_Manager">
+    <Key>
+      <PropertyRef Name="mid" />
+    </Key>
+    <Property Name="mid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mguid" Type="nvarchar(max)" />
+    <Property Name="mcontent" Type="nvarchar(max)" />
+    <Property Name="mrowtype" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ta_ussbk_categoryMaster">
+    <Key>
+      <PropertyRef Name="catid" />
+    </Key>
+    <Property Name="catid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="catname" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ta_ussbk_client_comment">
+    <Key>
+      <PropertyRef Name="cmntid" />
+    </Key>
+    <Property Name="cmntid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cmntype" Type="nvarchar" MaxLength="100" />
+    <Property Name="cmntcontent" Type="nvarchar(max)" />
+    <Property Name="cmntdate" Type="datetime" />
+    <Property Name="cmntcreatedate" Type="datetime" />
+    <Property Name="userfkid" Type="bigint" />
+  </EntityType>
+  <EntityType Name="ta_ussbk_clientrecord">
+    <Key>
+      <PropertyRef Name="recordid" />
+    </Key>
+    <Property Name="recordid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="productname" Type="nvarchar" MaxLength="100" />
+    <Property Name="productid" Type="nvarchar" MaxLength="50" />
+    <Property Name="businessname" Type="nvarchar" MaxLength="100" />
+    <Property Name="clientname" Type="nvarchar" MaxLength="100" />
+    <Property Name="clientemail" Type="varchar" MaxLength="50" />
+    <Property Name="contactmobile" Type="varchar" MaxLength="12" />
+    <Property Name="clientaddress" Type="varchar" MaxLength="200" />
+    <Property Name="formodule" Type="varchar" MaxLength="100" />
+    <Property Name="userrole" Type="varchar" MaxLength="100" />
+    <Property Name="userblocked" Type="bit" />
+    <Property Name="expirydate" Type="datetime" />
+    <Property Name="upassword" Type="nvarchar" MaxLength="250" />
+    <Property Name="remarks" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TA_ussbk_Coupons">
+    <Key>
+      <PropertyRef Name="couponid" />
+    </Key>
+    <Property Name="couponid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="couponcode" Type="varchar" MaxLength="15" />
+    <Property Name="cmsgforuser" Type="varchar" MaxLength="100" />
+    <Property Name="cAdminRemarks" Type="varchar" MaxLength="100" />
+    <Property Name="cblocked" Type="bit" />
+    <Property Name="camount" Type="int" />
+  </EntityType>
+  <EntityType Name="ta_ussbk_Description">
+    <Key>
+      <PropertyRef Name="descriptionid" />
+    </Key>
+    <Property Name="descriptionid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="desctitile" Type="int" />
+    <Property Name="desccategory" Type="int" />
+    <Property Name="descvideolink" Type="varchar" MaxLength="50" />
+    <Property Name="websitemodule" Type="varchar" MaxLength="50" />
+    <Property Name="descanydescription" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="ta_ussbk_ProjectDetail">
+    <Key>
+      <PropertyRef Name="amtdtid" />
+    </Key>
+    <Property Name="amtdtid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="projectdetail" Type="text" />
+  </EntityType>
+  <EntityType Name="ta_ussbk_TitleMaster">
+    <Key>
+      <PropertyRef Name="titleid" />
+    </Key>
+    <Property Name="titleid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="titlename" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <Association Name="FK_ta_ussbk_Description_ta_ussbk_categoryMaster">
+    <End Role="ta_ussbk_categoryMaster" Type="Self.ta_ussbk_categoryMaster" Multiplicity="0..1" />
+    <End Role="ta_ussbk_Description" Type="Self.ta_ussbk_Description" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ta_ussbk_categoryMaster">
+        <PropertyRef Name="catid" />
+      </Principal>
+      <Dependent Role="ta_ussbk_Description">
+        <PropertyRef Name="desccategory" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ta_ussbk_Description_ta_ussbk_TitleMaster">
+    <End Role="ta_ussbk_TitleMaster" Type="Self.ta_ussbk_TitleMaster" Multiplicity="0..1" />
+    <End Role="ta_ussbk_Description" Type="Self.ta_ussbk_Description" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ta_ussbk_TitleMaster">
+        <PropertyRef Name="titleid" />
+      </Principal>
+      <Dependent Role="ta_ussbk_Description">
+        <PropertyRef Name="desctitile" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ussdbModelStoreContainer">
+    <EntitySet Name="ta_blog" EntityType="Self.ta_blog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ta_blog_tags" EntityType="Self.ta_blog_tags" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ta_Manager" EntityType="Self.Ta_Manager" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ta_ussbk_categoryMaster" EntityType="Self.ta_ussbk_categoryMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ta_ussbk_client_comment" EntityType="Self.ta_ussbk_client_comment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ta_ussbk_clientrecord" EntityType="Self.ta_ussbk_clientrecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TA_ussbk_Coupons" EntityType="Self.TA_ussbk_Coupons" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ta_ussbk_Description" EntityType="Self.ta_ussbk_Description" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ta_ussbk_ProjectDetail" EntityType="Self.ta_ussbk_ProjectDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ta_ussbk_TitleMaster" EntityType="Self.ta_ussbk_TitleMaster" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ta_ussbk_Description_ta_ussbk_categoryMaster" Association="Self.FK_ta_ussbk_Description_ta_ussbk_categoryMaster">
+      <End Role="ta_ussbk_categoryMaster" EntitySet="ta_ussbk_categoryMaster" />
+      <End Role="ta_ussbk_Description" EntitySet="ta_ussbk_Description" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ta_ussbk_Description_ta_ussbk_TitleMaster" Association="Self.FK_ta_ussbk_Description_ta_ussbk_TitleMaster">
+      <End Role="ta_ussbk_TitleMaster" EntitySet="ta_ussbk_TitleMaster" />
+      <End Role="ta_ussbk_Description" EntitySet="ta_ussbk_Description" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

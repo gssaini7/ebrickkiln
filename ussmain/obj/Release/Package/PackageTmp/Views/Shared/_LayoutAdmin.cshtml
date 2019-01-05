@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+@*<html lang="en">*@
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>@ViewBag.Title - Brick kiln Software, Accounting Software for Brick kiln, Software for fly ash bricks</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="eBrickkiln has lot of new feature which make the software unique then other software.uSofts - Brickkiln manage every process of a brick kiln business like accounting, production, stock, sales ,Jaayee/ Phukayee,Pather ,Nikashi etc . This software was developed under guidance of related business man ,CA ,and accountant. Spend only min 45 minute to get the business on fingertip." />
+    <meta name="keywords" content="Brick kiln Software , Accounting Software for bhatta, Software For bhatta, Accounting Software for fly ash bricks, Software for fly ash bricks, Software for Block and tile Industry, Accounting Software for fly ash bricks, BTK(Bulls Trench Kiln) , Fly Ash Brick , Block and Tiles , Natural High Draft Brick Kiln , High Draft Brick Kiln , Vertical Shaft Brick Kiln , Hoffmans Kiln " />
+    <meta name="author" content="uSofts (Unique Software Solution)" />
+    @*<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>*@
+    @Styles.Render("~/Content/font")
+
+    
+    @Styles.Render("~/Content/bootstrap")
+@*@Styles.Render("~/Content/themes/base/css")*@
+    @Styles.Render("~/Content/bootstrapselect")
+     @Styles.Render("~/Content/datatablebootstrap")
+     @RenderSection("headerstyle", required: false)
+       
+@Styles.Render("~/Content/projectstyle")
+     @RenderSection("headerscript", required: false)
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @*<script src="https://www.google.com/recaptcha/api.js" async defer></script>*@
+
+</head>
+<body>
+
+    <header role="banner" id="ussebk-header">
+		<div class="fluid-container ">
+			<nav class="navbar navbar-default topbarcolor">
+				<div class="navbar-header">
+					<!-- Mobile Toggle Menu Button -->
+					<a href="#" class="js-ussebk-nav-toggle ussebk-nav-toggle" data-toggle="collapse" data-target="#gsnavbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+                    <a class="" href="/home/index">
+                        <img src="~/Images/ebrickkiln_logo.png" class="img-responsive" style="height:60px;margin:5px 0;" /> </a>
+				</div>
+                <div id="gsnavbar" class="navbar-collapse collapse">
+               <ul class="nav navbar-nav navbar-right">
+						<li class="@(ViewBag.title=="User"?"active":"")"><a href="/User/Index"><span>User</span></a></li>
+						<li class="@(ViewBag.title=="Blog"?"active":"")"><a href="/Blog/Index"><span>Blog</span></a></li>
+						<li class="@(ViewBag.title=="Support"?"active":"")"><a href="/Description/Index" ><span>Support</span></a></li>
+						<li class="@(ViewBag.title=="Coupon"?"active":"")"><a href="/Coupon/Index" ><span>Coupon</span></a></li>
+                                    @if (Request.IsAuthenticated)
+    {
+        @*if (User.IsInRole("Local")) { 
+        <li class="@(ViewBag.title=="Project Detail"?"active":"")"><a href="/ProjectDetail/Index" ><span>Project Detail</span></a></li>
+        }
+                                        
+                                        
+                                        
+                        *@
+                   <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="icon-user2 "></i> User Profile  <span class="caret" style="display:inline-block !important"></span></a>
+          <ul class="dropdown-menu gsddmenu">
+              <li class="simpletext">Signed as: <br /> 
+             <strong> @User.Identity.Name </strong> </li>
+            <li role="separator" class="divider"></li>
+               @if (User.IsInRole("Admin")) { 
+                         <li>
+                            <a href="/Description">Admin</a>
+                        </li>
+                    <li role="separator" class="divider"></li>
+                   <li> 
+                            <a href="/Support/ClientDetail">Client Details</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                   @*
+                   <li><a href="#" data-toggle="modal" data-target="#myModalShow">Change Password</a></li>
+            <li role="separator" class="divider"></li>*@
+                        }
+                        else  if (User.IsInRole("Support")) { 
+                         <li>
+                            <a href="/Support/ClientDetail">Admin</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        }
+            
+            <li>            
+                 @using (Html.BeginForm("LogOff", "Home", FormMethod.Post, new { id = "logoutForm" }))
+        {
+            @Html.AntiForgeryToken()
+            <a href="javascript:document.getElementById('logoutForm').submit()" class="" >LOG OUT</a>
+        }
+
+            </li>
+
+          </ul>
+        </li>}
+                   @*<li>
+                    @using (Html.BeginForm("LogOff", "Home", FormMethod.Post, new { id = "logoutForm" }))
+        {
+            @Html.AntiForgeryToken()
+            <a href="javascript:document.getElementById('logoutForm').submit()" class="logoff btn btn-danger  btn-xs">LOG OUT</a>
+        }</li>*@
+					</ul>
+				</div>
+			</nav>
+	  </div>
+	</header>
+
+<!-- end:header-top -->
+
+
+
+            <div>
+            @RenderSection("featured", required: false)
+            <section>
+                @RenderBody()
+            </section>
+            </div>
+
+     <div id="back-top" style="display: none;">
+        <a href="#" title="Go to top"><i class="icon-arrow-with-circle-up "></i></a>
+    </div>
+
+     <!-- modal placeholder-->
+    <div id='myModal' class='modal fade in '>
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content popupWindow">
+                <div class="modal-body">
+                     <button type="button" class="close customclose" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <div id='myModalContent'></div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+  
+
+    @*@Scripts.Render("~/bundles/jquery")*@
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryui")
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/bootstrapselect")
+
+
+    @RenderSection("scriptsafterbootstrap", required: false)
+
+
+     @Scripts.Render("~/bundles/jquerydatatable")
+    @Scripts.Render("~/bundles/datatablebootstrap")
+    @Scripts.Render("~/bundles/project")
+
+    @RenderSection("scripts", required: false)
+
+
+</body>
+</html>
+
+
+@*<div class="modal fade" id="myModalShow" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        @Html.Partial("_ChangePassword")
+                    </div>
+                </div>
+            </div>*@

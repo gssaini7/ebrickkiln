@@ -1,0 +1,55 @@
+﻿@model R.BusinessEntities.LoginModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutWithLink.cshtml";
+    
+}
+
+
+
+<section id="ussebk-explore">
+    <div class="container">
+        <div class="row" id="ussebk-rquestform">
+            <div class="col-md-8 col-md-offset-2">
+                @using (Html.BeginForm("Login", "Home", FormMethod.Post, new { @id="Loginform"}))
+       {
+                                    @Html.AntiForgeryToken()
+            <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Login</h3>
+        </div>
+        <div class="panel-body">
+             
+
+            <div class="col-md-12">
+            <div class="form-group">
+                <label>Enter Mobile</label>
+                @Html.TextBoxFor(a => a.MobileLogin, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.MobileLogin)
+            </div>
+                 @*<div class="form-group">
+                <label>Enter Password</label>
+                @Html.PasswordFor(a => a.Password, new { @class = "form-control" })
+            </div>*@
+
+            </div>
+             @*<div class="col-md-2">
+                 <br />
+                    <input type="submit" name="byotp" value="Login by OTP" class="btn btn-success btn-xs" />
+             </div>*@
+           
+            
+        </div>
+        <div class="panel-footer text-right">
+                    <input type="submit" name="byotp" value="Submit" class="btn btn-success " />
+            
+            @*<input type="submit" name="bypassword" value="Submit" class="btn btn-success" />*@
+
+        </div>
+    </div>
+       }
+</div>
+
+            </div>
+        </div>
+    </section>

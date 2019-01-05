@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<commentstype>
+  <typename>eMail</typename>
+  <typename>SMS</typename>
+  <typename>Whatsapp</typename>
+  <typename>Letter</typename>
+  <typename>Call</typename>
+  <typename>Other</typename>
+</commentstype>

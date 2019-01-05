@@ -1,0 +1,169 @@
+﻿@model R.BusinessEntities.BlogModuleModel
+
+
+@using (Html.BeginForm("save", "Blog", FormMethod.Post, new { id = "baseForm" }))
+{
+    if (Model != null && Model.blogid > 0)
+    {
+    @Html.HiddenFor(a => a.blogid)
+    }
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Save Blog</h3>
+        </div>
+        <div class="panel-body">
+           
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Title</label>
+                    @Html.TextBoxFor(a => a.blogtitle, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(a => a.blogtitle)
+                </div>
+            </div>
+               <div class="col-md-4">
+                <div class="form-group">
+                    <label>Date</label>
+                    @Html.TextBoxFor(a => a.blogdate,"{0:MMM/dd/yyyy}", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(a => a.blogdate)
+                </div>
+            </div>
+            
+             <div class="col-md-4">
+                <div class="form-group">
+                    <label>URL Keywords</label>
+                    @Html.TextBoxFor(a => a.blogkeywords, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(a => a.blogkeywords)
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Description</label>
+                    @Html.TextAreaFor(a => a.blogdescription, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(a => a.blogdescription)
+                </div>
+            </div>
+         
+             <div class="col-md-6">
+                <div class="form-group">
+                    <label>Tags </label><a href="/tags/Index" class="pull-right dynamicpopupmodal"><i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i></a>
+                   
+                    @Html.DropDownListFor(x => x.blogtags, Enumerable.Empty<SelectListItem>(), "-Select-", new { @class="form-control selectpicker", @multiple="mutiple"})
+                    @Html.ValidationMessageFor(a => a.blogtags)
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Published </label>
+                    @Html.EditorFor(x => x.blogpublished, new { @class="form-control"})
+                    @Html.ValidationMessageFor(a => a.blogpublished)
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>For website</label>
+                    @foreach (var items in ussmain.StaticData.OurWebsiteList())
+                    {
+                        var isCheked = false;
+                        if (Model != null && Model.blogwebsite != null)
+                        {
+                            var websl = Model.blogwebsite.Split(',').Where(str => str != " ");
+                            foreach (string ci in websl)
+                            {
+                                if (ci.Trim() == items.Text)
+                                {
+                                    isCheked = true;
+                                    break;
+                                }
+                            }
+                        }
+                        @:<input type="checkbox" @(isCheked ? "checked" : "")   name="forwebsite" value="@items.Text">
+                
+                        @items.Text
+                
+                    }
+
+
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <input type="submit" value="Save" class="btn btn-success" />
+            <a href="#" onclick="loadblankform('/Blog/save/0')">Clear</a>
+
+        </div>
+    </div>
+}
+
+
+<script>
+$(function() {
+    FillDDTags();
+    $('#blogdate').datepicker({
+        format: "M/dd/yyyy",
+    });
+    
+    //var a = $('#blogtags').selectpicker('val');
+    //alert(a);
+    //$('.selectpicker').on('change', function () {
+    //    var selected = []
+    //    selected = $('.selectpicker').val()
+    //    console.log(selected); //Get the multiple values selected in an array
+    //    console.log(selected.length); //Length of the array
+    //    $("#blogtags").val(selected);
+    //    alert( $("#blogtags").val());
+    //});
+
+    
+});
+
+    function FillDDTags()
+{
+        $.getJSON('/tags/getall', function (result) {
+        var ddl = $('#blogtags');
+        
+        ddl.empty();
+        //blankDdl(ddl);
+        $.each(result.data, function (id, option) {
+            ddl.append($('<option></option>').val(option.tagid).html(option.tagname));
+        });
+
+        var dbmodelval = '@(Model==null?"":Model.blogtags)';
+        var dbmodelvalarray = dbmodelval.split(',');
+        //$.each(dbmodelvalarray, function (key, value) {
+        //    ddl.val(value).attr("selected", "selected");
+        //    alert(key + ": " + value);
+        //});
+
+        //alert(dbmodelvalarray[0]);
+        //ddl.val(dbmodelval).attr("selected", "selected");
+        //console.log(dbmodelvalarray);
+        //alert(dbmodelvalarray);
+        ddl.selectpicker('val', dbmodelvalarray);
+        
+        $('#blogtags').selectpicker({
+            liveSearch: true,
+            liveSearchPlaceholder: 'search...',
+            liveSearchStyle: 'contains',
+        });
+    });
+}
+
+
+function blankDdl(ddltobblank) {
+    ddltobblank.html('');
+    ddltobblank.append($('<option></option>').val('').html("--Select--"));
+}
+
+
+var editor = CKEDITOR.replace('blogdescription');
+
+// The "change" event is fired whenever a change is made in the editor.
+editor.on('change', function (evt) {
+    // getData() returns CKEditor's HTML content.
+    //alert(evt.editor.getData());
+    //console.log('Total bytes: ' + evt.editor.getData().length);
+    $("#blogdescription").val(evt.editor.getData());
+
+});
+</script>

@@ -1,0 +1,73 @@
+﻿@model R.BusinessEntities.ClientComments
+
+
+@using (Html.BeginForm("save", "UserComments", FormMethod.Post, new { id = "baseForm" }))
+{
+    if (Model != null && Model.cmntid > 0)
+    {
+    @Html.HiddenFor(a => a.cmntid)
+    @Html.HiddenFor(a => a.userfkid)
+    }
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Save Comment</h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                     @Html.DisplayNameFor(a=>a.cmntype)
+                     @Html.DropDownListFor(model => model.cmntype, ussmain.StaticData.CommentTypeList(), "Select Type", new { @class = "form-control" })
+
+                @Html.ValidationMessageFor(a => a.cmntype)
+                    
+                </div>
+            </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                     @Html.DisplayNameFor(a=>a.cmntdate)
+                    @Html.TextBoxFor(a => a.cmntdate,"{0:MMM/dd/yyyy}", new { @class = "form-control" })
+
+                @Html.ValidationMessageFor(a => a.cmntdate)
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    @Html.DisplayNameFor(a=>a.cmntcontent)
+
+                @Html.TextAreaFor(a => a.cmntcontent, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.cmntcontent)
+                </div>
+            </div>
+            
+                </div>
+           
+        </div>
+        <div class="panel-footer">
+            <input type="submit" value="Save" class="btn btn-success" />
+            <a href="#" onclick="loadblankform('/UserComments/save/0')">Clear</a>
+
+        </div>
+    </div>
+}
+
+<script>
+$(function() {
+    var a = $('#cmntdate').val();
+    if (a == '') {
+        $('#cmntdate').datepicker({
+            format: "M/dd/yyyy",
+        }).datepicker("setDate",new Date());
+    }
+    else
+    {
+        $('#cmntdate').datepicker({
+            format: "M/dd/yyyy",
+        });
+    }
+});
+
+   
+
+</script>

@@ -1,0 +1,52 @@
+﻿@model R.BusinessEntities.BlogModuleModel
+@{
+    //ViewBag.Title = Model.blogtitle;
+    var img = Model.blogimage + ".jpg";
+    
+   
+    
+}
+    <script type="text/javascript" src="http://platform-api.sharethis.com/js/sharethis.js#property=58931704249fe700117677fd"></script>
+
+
+<div class="blogdetail">
+ @if(Model!=null){
+     <div class="row" id="ussebk-rquestform">
+<h2 class="well  text-center">@Model.blogtitle</h2>
+            <div class="">
+                <div class="col-md-6">
+                <img src="~/ReadWrite/@img" alt="@Model.blogtitle"  class="img-responsive">
+
+                      <div class="relatedtags">
+        @if(Model.blogtagsdisplay!=null){
+     foreach (var item in Model.blogtagsdisplay.Split(',')) 
+     {
+       var   nitem=item.Trim();
+         if(nitem!=string.Empty){
+            @Html.ActionLink(nitem,"Blogs", new { id = nitem }, new {@class="btn btn-info" })
+         }
+     }
+     }
+    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                <span class="pull-right blogdate">@Model.blogdate.ToLongDateString()</span></div>
+                <p>@Html.Raw(Model.blogdescription)
+                   </p></div>
+                </div>
+            </div>
+     
+   
+
+
+     @*
+     
+     <div>
+         @{Html.RenderAction("BlogRelated", new { btags = Model.blogtags, currentid=Model.blogid });}
+     </div>*@
+
+               
+                }
+               </div>

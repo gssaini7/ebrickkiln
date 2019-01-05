@@ -1,0 +1,92 @@
+﻿@model R.BusinessEntities.Manager.TaskEntity
+
+
+@using (Html.BeginForm("save", "Task", FormMethod.Post, new { id = "baseForm" }))
+{
+    if (Model != null && Model.managerid > 0)
+    {
+    @Html.HiddenFor(a => a.managerid)
+    }
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Save Task
+                <a data-toggle="collapse" data-target="#collapseOne" 
+           href="#collapseOne" class="pull-right ">
+                     <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    </a>
+            </h3>
+        </div>
+           <div id="collapseOne" class="panel-collapse collapse ">
+
+        <div class="panel-body">
+            @*<div class="col-md-3">
+                <div class="form-group">
+                    <label>Project </label><a href="/Project/Index" class="pull-right dynamicpopupmodal"><i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i></a>
+                    
+                   
+                    @Html.DropDownListFor(x => x.projectid, Enumerable.Empty<SelectListItem>(), "-Select-", new { @class="form-control selectpicker"})
+                    @Html.ValidationMessageFor(a => a.projectid)
+                </div>
+            </div>*@
+          
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Task Name</label>
+                    @Html.TextBoxFor(a => a.taskname, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(a => a.taskname)
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Task Description</label>
+                    @Html.TextAreaFor(a => a.taskdescription, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(a => a.taskdescription)
+                </div>
+            </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                    <label>Assigned To</label>@*<a href="/User/Index" class="pull-right dynamicpopupmodal"><i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i></a>*@
+                    @Html.DropDownListFor(x => x.AssignedTo, Enumerable.Empty<SelectListItem>(), "-Select-", new { @class="form-control selectpicker"}) 
+                    @Html.ValidationMessageFor(a => a.AssignedTo)
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Cost</label>
+                    @Html.TextBoxFor(a => a.Cost, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(a => a.Cost)
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Amount Paid</label>
+                    @Html.TextBoxFor(a => a.AmtPaid, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(a => a.AmtPaid)
+                </div>
+            </div>
+             <div class="col-md-3">
+                <div class="form-group">
+                    <label>Current Status</label>
+                    @Html.DropDownListFor(a => a.CurrentStatus, ussmain.StaticData.TaskStatusList(), new { @class = "form-control" })
+                    @Html.ValidationMessageFor(a => a.CurrentStatus)
+                </div>
+            </div>
+            
+        </div>
+        <div class="panel-footer">
+            <input type="submit" value="Save" class="btn btn-success" />
+            <a href="#" onclick="loadblankform('/Manage/Task/save/0')">Clear</a>
+
+        </div>
+               </div>
+    </div>
+}
+
+
+<script>
+$(function() {
+    //FillDD('/Project/GetAll', '@(Model==null?0:Model.projectid)', '#projectid');
+    FillDD('/Manage/User/GetAllForDropDown', '@(Model==null?0:Model.AssignedTo)', '#AssignedTo');
+});
+</script>

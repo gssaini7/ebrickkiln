@@ -1,0 +1,277 @@
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\ussmain.dll
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\ussmain.pdb
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\Antlr3.Runtime.dll
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\DotNetOpenAuth.AspNet.dll
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\DotNetOpenAuth.Core.dll
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\DotNetOpenAuth.OAuth.Consumer.dll
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\DotNetOpenAuth.OAuth.dll
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\DotNetOpenAuth.OpenId.dll
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\EntityFramework.dll
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\Microsoft.Web.Infrastructure.dll
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\Microsoft.Web.WebPages.OAuth.dll
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\Newtonsoft.Json.dll
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\System.Net.Http.Formatting.dll
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\System.Web.Helpers.dll
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\System.Web.Http.dll
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\System.Web.Http.WebHost.dll
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\System.Web.Mvc.dll
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\System.Web.Optimization.dll
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\System.Web.Razor.dll
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\System.Web.WebPages.Deployment.dll
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\System.Web.WebPages.dll
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\System.Web.WebPages.Razor.dll
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\WebGrease.dll
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\WebMatrix.Data.dll
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\WebMatrix.WebData.dll
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\EntityFramework.xml
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\Newtonsoft.Json.xml
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\System.Net.Http.Formatting.xml
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\System.Web.Helpers.xml
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\System.Web.Http.xml
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\System.Web.Http.WebHost.xml
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\System.Web.Mvc.xml
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\System.Web.Razor.xml
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\System.Web.WebPages.xml
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\System.Web.WebPages.Deployment.xml
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\System.Web.WebPages.Razor.xml
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\WebMatrix.Data.xml
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\Microsoft.Web.WebPages.OAuth.xml
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\WebMatrix.WebData.xml
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\DotNetOpenAuth.AspNet.xml
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\DotNetOpenAuth.Core.xml
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\DotNetOpenAuth.OAuth.Consumer.xml
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\DotNetOpenAuth.OAuth.xml
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\DotNetOpenAuth.OpenId.xml
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\obj\Release\ebrickkiln.csprojResolveAssemblyReference.cache
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\obj\Release\ussmain.dll
+E:\20-2-17 USS eBK\ebrikkiln\ussmain\obj\Release\ussmain.pdb
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\ussmain.dll
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\ussmain.pdb
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\Antlr3.Runtime.dll
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\DotNetOpenAuth.AspNet.dll
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\DotNetOpenAuth.Core.dll
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\DotNetOpenAuth.OAuth.dll
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\DotNetOpenAuth.OpenId.dll
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\EntityFramework.dll
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\Microsoft.Web.Infrastructure.dll
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\Newtonsoft.Json.dll
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\System.Net.Http.Formatting.dll
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\System.Web.Helpers.dll
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\System.Web.Http.dll
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\System.Web.Http.WebHost.dll
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\System.Web.Mvc.dll
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\System.Web.Optimization.dll
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\System.Web.Razor.dll
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\System.Web.WebPages.Deployment.dll
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\System.Web.WebPages.dll
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\System.Web.WebPages.Razor.dll
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\WebGrease.dll
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\WebMatrix.Data.dll
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\WebMatrix.WebData.dll
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\EntityFramework.xml
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\Newtonsoft.Json.xml
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\System.Net.Http.Formatting.xml
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\System.Web.Helpers.xml
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\System.Web.Http.xml
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\System.Web.Http.WebHost.xml
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\System.Web.Mvc.xml
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\System.Web.Razor.xml
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\System.Web.WebPages.xml
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\System.Web.WebPages.Deployment.xml
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\System.Web.WebPages.Razor.xml
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\WebMatrix.Data.xml
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\WebMatrix.WebData.xml
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\DotNetOpenAuth.AspNet.xml
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\DotNetOpenAuth.Core.xml
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\DotNetOpenAuth.OAuth.xml
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\DotNetOpenAuth.OpenId.xml
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\obj\Release\ebrickkiln.csprojResolveAssemblyReference.cache
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\obj\Release\ussmain.dll
+D:\gs\Project\USS\ebrickkiln\ebrickkiln\ussmain\obj\Release\ussmain.pdb
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\ussmain.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\ussmain.pdb
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\Antlr3.Runtime.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\BusinessEntities.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\DotNetOpenAuth.AspNet.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\DotNetOpenAuth.Core.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\DotNetOpenAuth.OAuth.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\DotNetOpenAuth.OpenId.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\EntityFramework.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\Microsoft.Practices.Unity.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\Microsoft.Web.Infrastructure.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\Newtonsoft.Json.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\R.BAL.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\R.Resolver.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Net.Http.Formatting.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Web.Helpers.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Web.Http.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Web.Http.WebHost.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Web.Mvc.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Web.Optimization.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Web.Razor.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Web.WebPages.Deployment.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Web.WebPages.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Web.WebPages.Razor.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\Unity.Mvc3.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\Unity.WebApi.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\WebGrease.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\WebMatrix.Data.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\WebMatrix.WebData.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\DAL.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\R.BAL.pdb
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\BusinessEntities.pdb
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\R.Resolver.pdb
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\EntityFramework.xml
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\Newtonsoft.Json.xml
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Net.Http.Formatting.xml
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Web.Helpers.xml
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Web.Http.xml
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Web.Http.WebHost.xml
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Web.Mvc.xml
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Web.Razor.xml
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Web.WebPages.xml
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Web.WebPages.Deployment.xml
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Web.WebPages.Razor.xml
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\WebMatrix.Data.xml
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\WebMatrix.WebData.xml
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\DotNetOpenAuth.AspNet.xml
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\DotNetOpenAuth.Core.xml
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\DotNetOpenAuth.OAuth.xml
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\DotNetOpenAuth.OpenId.xml
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\DAL.pdb
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\obj\Release\ebrickkiln.csprojResolveAssemblyReference.cache
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\obj\Release\ussmain.dll
+D:\gs\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\obj\Release\ussmain.pdb
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\ussmain.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\ussmain.pdb
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\Antlr3.Runtime.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\BusinessEntities.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\DotNetOpenAuth.AspNet.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\DotNetOpenAuth.Core.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\DotNetOpenAuth.OAuth.Consumer.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\DotNetOpenAuth.OAuth.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\DotNetOpenAuth.OpenId.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\EntityFramework.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\Microsoft.Practices.Unity.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\Microsoft.Web.Infrastructure.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\Microsoft.Web.WebPages.OAuth.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\Newtonsoft.Json.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\R.BAL.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\R.Resolver.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Web.Helpers.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Web.Mvc.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Web.Optimization.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Web.Razor.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Web.WebPages.Deployment.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Web.WebPages.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Web.WebPages.Razor.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\Unity.Mvc3.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\Unity.WebApi.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\WebGrease.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\WebMatrix.Data.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\WebMatrix.WebData.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\DAL.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\R.BAL.pdb
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\BusinessEntities.pdb
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\R.Resolver.pdb
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\EntityFramework.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\Newtonsoft.Json.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Web.Helpers.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Web.Mvc.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Web.Razor.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Web.WebPages.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Web.WebPages.Deployment.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\System.Web.WebPages.Razor.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\WebMatrix.Data.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\Microsoft.Web.WebPages.OAuth.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\WebMatrix.WebData.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\DotNetOpenAuth.AspNet.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\DotNetOpenAuth.Core.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\DotNetOpenAuth.OAuth.Consumer.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\DotNetOpenAuth.OAuth.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\DotNetOpenAuth.OpenId.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\bin\DAL.pdb
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\obj\Release\ebrickkiln.csprojResolveAssemblyReference.cache
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\obj\Release\ussmain.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick dynamic module\ebrickkiln\ussmain\obj\Release\ussmain.pdb
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\ussmain.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\ussmain.pdb
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\Antlr3.Runtime.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\BusinessEntities.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\DotNetOpenAuth.AspNet.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\DotNetOpenAuth.Core.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\DotNetOpenAuth.OAuth.Consumer.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\DotNetOpenAuth.OAuth.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\DotNetOpenAuth.OpenId.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\EntityFramework.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\Microsoft.Practices.Unity.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\Microsoft.Web.Infrastructure.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\Microsoft.Web.WebPages.OAuth.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\Newtonsoft.Json.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\R.BAL.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\R.Resolver.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\System.Web.Helpers.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\System.Web.Optimization.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\System.Web.Razor.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\System.Web.WebPages.Deployment.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\System.Web.WebPages.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\System.Web.WebPages.Razor.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\Unity.Mvc3.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\Unity.WebApi.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\WebGrease.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\WebMatrix.Data.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\WebMatrix.WebData.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\DAL.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\R.BAL.pdb
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\BusinessEntities.pdb
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\R.Resolver.pdb
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\EntityFramework.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\Newtonsoft.Json.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\System.Web.Helpers.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\System.Web.Razor.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\System.Web.WebPages.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\System.Web.WebPages.Deployment.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\System.Web.WebPages.Razor.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\WebMatrix.Data.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\Microsoft.Web.WebPages.OAuth.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\WebMatrix.WebData.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\DotNetOpenAuth.AspNet.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\DotNetOpenAuth.Core.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\DotNetOpenAuth.OAuth.Consumer.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\DotNetOpenAuth.OAuth.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\DotNetOpenAuth.OpenId.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\DAL.pdb
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\obj\Release\ebrickkiln.csprojResolveAssemblyReference.cache
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\obj\Release\ussmain.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\obj\Release\ussmain.pdb
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\System.Web.Http.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\System.Web.Http.WebHost.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\System.Web.Http.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\System.Web.Http.WebHost.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\System.Net.Http.Formatting.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\System.Net.Http.Formatting.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\System.Web.Mvc.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\System.Web.Mvc.xml
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\Microsoft.SqlServer.Types.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\SqlServerTypes\x64\msvcr120.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\SqlServerTypes\x86\msvcr120.dll
+E:\b\Project\USS\Brick Kiln\ebrickkiln\ebrick with manager\ebrickkiln\ussmain\bin\SqlServerTypes\x86\SqlServerSpatial140.dll

@@ -1,0 +1,147 @@
+﻿@model R.BusinessEntities.ClientRecordModel
+
+
+@using (Html.BeginForm("save", "User", FormMethod.Post, new { id = "baseForm" }))
+{
+    if (Model != null && Model.recordid > 0)
+    {
+    @Html.HiddenFor(a => a.recordid)
+    }
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Save Client</h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+            <div class="col-md-3">
+            <div class="form-group">
+                <label>Product Name</label>
+                @Html.DropDownListFor(model => model.productname, ussmain.StaticData.ProjectNameList(), "Select Project", new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.productname)
+            </div>
+            </div>
+            <div class="col-md-3">
+             <div class="form-group">
+                <label>Product ID</label>
+                @Html.TextBoxFor(a => a.productid, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.productid)
+            </div> 
+                 </div>
+            <div class="col-md-3">
+            <div class="form-group">
+                <label>Business Name</label>
+                @Html.TextBoxFor(a => a.businessname, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.businessname)
+            </div> 
+                 </div>
+            <div class="col-md-3">
+            <div class="form-group">
+                <label>Client Name</label>
+                @Html.TextBoxFor(a => a.clientname, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.clientname)
+            </div> 
+
+            
+             </div>
+            <div class="col-md-3">
+            <div class="form-group">
+                <label>Client Email</label>
+                @Html.TextBoxFor(a => a.clientemail, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.clientemail)
+            </div> 
+                 </div>
+            <div class="col-md-3">
+            <div class="form-group">
+                <label>Client Mobile</label>
+                @Html.TextBoxFor(a => a.contactmobile, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.contactmobile)
+            </div> 
+                 </div>
+            <div class="col-md-3">
+            <div class="form-group">
+                <label>Client Address</label>
+                @Html.TextBoxFor(a => a.clientaddress, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.clientaddress)
+            </div>
+                </div>
+                   <div class="col-md-3">
+            <div class="form-group">
+                <label>Expiry Date</label>
+                @Html.TextBoxFor(a => a.expirydate,"{0:MMM/dd/yyyy}", new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.expirydate)
+            </div>
+                </div>
+           </div>
+            <div class="row">
+                 <div class="col-md-4">
+            <div class="form-group">
+                <label>Remarks</label>
+                 @Html.TextAreaFor(a => a.remarks, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.remarks)
+                </div>
+                     </div>
+             <div class="col-md-4">
+            <div class="form-group">
+                <label>User for website</label>
+             
+                 <br />
+               
+
+                 @foreach (var items in ussmain.StaticData.OurWebsiteList()) 
+            {
+                var isCheked=false;
+                if (Model != null && Model.formodule!=null)
+                {
+                    var websl = Model.formodule.Split(',').Where(str => str != " ");
+                    foreach (string ci in websl)
+                    {
+                        if (ci.Trim() == items.Text)
+                        {
+                            isCheked = true;
+                            break;
+                        }
+                    }
+                }
+                     
+                     
+                @:<input type="checkbox" @(isCheked?"checked":"")   name="forwebsite" value="@items.Text">
+                
+                @items.Text
+                     <br />
+                
+            }
+                   
+
+            </div>
+                </div>
+
+             <div class="col-md-3">
+            <div class="form-group">
+                <label>User Blocked</label>
+                                @Html.EditorFor(a => a.userblocked)
+                @Html.ValidationMessageFor(a => a.userblocked)
+
+            </div>
+                </div>
+                </div>
+        </div>
+        <div class="panel-footer">
+            <input type="submit" value="Save" class="btn btn-success" />
+            <a href="#" onclick="loadblankform('/User/save/0')">Clear</a>
+            @*<input type="button" value="Clear" class="btn btn-default" onclick="loadblankform('/User/save/0')" />*@
+
+        </div>
+    </div>
+
+    
+}
+
+
+ <script type="text/javascript">
+     $(function () {
+         $('#expirydate').datepicker({
+             format: "M/dd/yyyy",
+         });
+     });
+        </script>

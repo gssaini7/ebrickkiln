@@ -1,0 +1,19 @@
+﻿
+
+
+@{
+    ViewBag.Title = "Blogs";
+    Layout = "~/Views/Shared/_LayoutWithLink.cshtml";
+    
+}
+<section id="ussebk-explore">
+    <div class="container">
+        <div class="row" id="ussebk-rquestform">
+<h1 class="well  text-center">Updates </h1>
+            <div class="">
+               @{Html.RenderAction("BlogsAll");}
+                
+            </div>
+            </div>
+        </div>
+    </section>

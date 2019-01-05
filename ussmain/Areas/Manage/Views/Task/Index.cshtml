@@ -1,0 +1,164 @@
+﻿@{
+    ViewBag.Title = "Tasks";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <h1 class="text-center"><a href="/Manage/Project/Index"> @ViewBag.ProjectName</a></h1>
+    <h2>Tasks</h2>
+
+    <div class="tablecontainer">
+
+        <div class="">
+            <div id="myFormContent">
+            </div>
+        </div>
+
+        <div class="">
+            <table id="myDatatable" class="table table-striped table-bordered  table-hover">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Task</th>
+                        <th>Description</th>
+                        <th>Assigned to</th>
+                        <th>Date</th>
+                        <th>Cost</th>
+                        <th>Amount Paid</th>
+                        <th>Current Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>Assigned to</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>Current Status</th>
+                        <th></th>
+
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        var oTableData = {
+            "ajax": {
+                "url": '/Manage/Task/GetAll',
+                "type": "get",
+                "datatype": "json"
+            },
+            "columns": [
+                { "data": "managerid", "width": "20px", },
+                { "data": "taskname", },
+                { "data": "taskdescription", },
+                { "data": "AssignedUser.gsusername", },
+                { "data": "LastUpdatedate", },
+                { "data": "Cost", },
+                { "data": "AmtPaid", },
+                { "data": "CurrentStatus", },
+                {
+                    "orderable": false,
+                    "data": "managerid",
+                    "render": function (data, type, row) {
+                        var comments = '<a class="dynamicpopupmodal" href="/Manage/Comments/index/' + data + '"><i class="fa fa-comments" aria-hidden="true"></i></a>';
+                        return '<a class="popup" href="/Manage/Task/save/' + data + '"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>'
+                        + comments;
+                    }
+                }
+            ],
+            "columnDefs": [{
+                "searchable": false,
+                "orderable": false,
+                "targets": 0
+            }],
+            "columnDefs": [{
+                "targets": 4,
+                "render": function (value) {
+                    if (value === null) return "";
+
+                    var pattern = /Date\(([^)]+)\)/;
+                    var results = pattern.exec(value);
+                    var dt = new Date(parseFloat(results[1]));
+
+                    var months = ["January", "February", "March", "April", "May", "June",
+                        "July", "August", "September", "October", "November", "December"];
+                    return '<span class="hidden">' + dt.getFullYear() + (dt.getMonth() + 1) + dt.getDate() + '</span> ' +
+                        dt.getDate() + "-" + (months[dt.getMonth()]) + "-" + dt.getFullYear() +
+                    ' <span class="hidden">' + (dt.getMonth() + 1) + "/" + dt.getDate() + "/" + dt.getFullYear() + '</span> '
+                    + dt.getHours() + ":" + addZero(dt.getMinutes());
+                    
+                }
+            }],
+            "order": [[4, 'desc']],
+            destroy: true,
+            initComplete: function () {
+                this.api().columns([3,7]).every(function () {
+                    var column = this;
+                    var select = $('<select><option value=""></option></select>')
+                        .appendTo($(column.footer()).empty())
+                        .on('change', function () {
+                            var val = $.fn.dataTable.util.escapeRegex(
+                                $(this).val()
+                            );
+
+                            column
+                                .search(val ? '^' + val + '$' : '', true, false)
+                                .draw();
+                        });
+
+                    column.data().unique().sort().each(function (d, j) {
+                        select.append('<option value="' + d + '">' + d + '</option>')
+                    });
+
+
+                });
+            },
+        };
+        var savepage = '/Manage/Task/save/0';
+        filldatatable(oTableData, savepage);
+
+    });
+    function addZero(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+</script>
+
+
+@*<div class="container">
+
+<div class="dynamicpopupcontainer">
+<a href="/Title/Index" class="dynamicpopup btn btn-default">Open</a>
+</div>
+
+</div>*@
+<!-- modal placeholder-->
+@*<div id='myModal' class='modal fade in '>
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content popupWindow">
+                <div class="modal-body">
+                     <button type="button" class="close customclose" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <div id='myModalContent'></div>
+                </div>
+                
+            </div>
+        </div>
+    </div>*@
+
+
+
+@*@Html.Action("Index", "Title")*@
+@*@Html.Action("Index", "Category")*@
+

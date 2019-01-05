@@ -1,0 +1,16 @@
+﻿@model IEnumerable<R.BusinessEntities.Manager.ProjectEntity>
+
+@{
+    if(Model!=null){
+    foreach(var project in Model)
+    {
+        <div>
+            <a href="/Manage/Task/Index/@project.managerid" >@project.projectname</a>
+       <a href="/Manage/Dashboard/Tasks/@project.managerid" >@project.projectname</a>
+        </div>
+    }
+    }
+    else{
+    <p>No projects found.</p>
+    }
+    }

@@ -1,0 +1,95 @@
+﻿@model ussmain.Models.Contact
+
+<section id="ussebk-contacts" data-section="contacts">
+	<div id="ussebk-footer" role="contentinfo">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 to-animate">
+					<h3 class="section-title">About uSofts</h3>
+					<p>uSofts (Unique Software Solution) is a new discovery in the horizon of IT industry and is a company engaged in providing software solution with 
+tremendous record of providing quality software services on various platforms.</p>
+					<p class="copy-right">&copy; @DateTime.Now.Year uSofts (Unique Software Solution). <br>All Rights Reserved. <br>
+							</p>
+				</div>
+
+				<div class="col-md-4 to-animate">
+					<h3 class="section-title">Our Address</h3>
+					<ul class="contact-info">
+						<li><i class="icon-location "></i>JCT Chohal, Distt. Hoshiarpur, Punjab, India 146024</li>
+						<li><i class="icon-mobile2 "></i>+918725052452</li>
+						<li><i class="icon-envelop "></i><a href="#">info@usofts.net</a></li>
+						@*<li><i class="icon-globe2"></i><a href="#">www.usofts.net</a></li>*@
+					</ul>
+					<h3 class="section-title">Connect with Us</h3>
+					<ul class="social-media">
+						<li><a href="https://www.facebook.com/Brick-Kiln-Software-ebrickkiln-369977810050672" class="facebook" target="_blank"><i class="icon-facebook-with-circle "></i></a></li>
+						<li><a href="#" class="twitter"><i class="icon-twitter-with-circle "></i></a></li>
+						<li><a href="https://www.youtube.com/channel/UCgkSIuCMyDtgae_5GUTK6UQ" class="youtube" target="_blank"><i class="icon-youtube-with-circle "></i></a></li>
+						@*<li><a href="#" class="github"><i class="icon-github-alt"></i></a></li>*@
+					</ul>
+				</div>
+				<div class="col-md-4 to-animate">
+					<h3 class="section-title">Drop us a line</h3>
+					  @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @id="Contactform"}))
+       {
+                                    @Html.AntiForgeryToken()
+                                    <div class="col-md-12">
+						<div class="form-group">
+							<label for="name" class="sr-only">Name</label>
+							 @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @placeholder = "Name" })
+                                        @Html.ValidationMessageFor(model => model.Name)
+						</div>
+           </div>
+             <div class="col-md-12">
+           
+						<div class="form-group">
+							<label for="email" class="sr-only">Email</label>
+							 @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "Email" })
+                                        @Html.ValidationMessageFor(model => model.Email)
+						</div>
+                  </div>
+             <div class="col-md-12">
+                           <div class="form-group">
+							<label for="Mobile" class="sr-only">Mobile</label>
+							 @Html.TextBoxFor(model => model.Mobile, new { @class = "form-control", @placeholder = "Mobile" })
+                                        @Html.ValidationMessageFor(model => model.Mobile)
+						</div>
+                  </div>
+             <div class="col-md-12">
+						<div class="form-group">
+							<label for="message" class="sr-only">Message</label>
+							 @Html.TextAreaFor(model => model.Message, new { @class = "form-control", @placeholder = "Message", @cols = "30", @rows = "7" })
+                                        @Html.ValidationMessageFor(model => model.Message)
+						</div>
+                  </div>
+             <div class="col-md-12">
+						<div class="form-group">
+                            @*<div class="g-recaptcha" data-sitekey="6LdqWhYUAAAAAK3q5JunJQD3U55R8lgjMf2zFwif"></div>*@
+
+							<input type="submit" id="btn-submit" class="btn btn-ebktheme btn-md" value="Send Message">
+                             @{if (ViewBag.resultmailhome != null)
+                               {
+                        @*<div class="alert alert-danger alert-dismissible " role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            @ViewBag.resultmailhome
+
+
+                        </div>*@
+                                 <script type="text/javascript">
+                                    window.onload = function () {
+                                        alert("@ViewBag.resultmailhome");
+                                    };
+                                </script>
+                               }
+                             }
+						</div>
+                  </div>
+       }
+				</div>
+			</div>
+		</div>
+	</div>
+        </section>
+

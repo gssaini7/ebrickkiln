@@ -1,0 +1,301 @@
+﻿@{
+    ViewBag.Title = "User";
+    //Layout = "~/Views/Shared/_LayoutBlank.cshtml";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+
+    
+}
+@section headerstyle{
+
+    @Styles.Render("~/Content/bootstrapcalender")
+ <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.3.1/css/buttons.dataTables.min.css" />
+   <link rel="stylesheet" type="text/css" href=" https://cdn.datatables.net/buttons/1.3.1/css/buttons.bootstrap.min.css" />
+
+    
+    }
+
+
+<div class="container">
+
+<h1>User</h1>
+
+<div  class="tablecontainer">
+
+    <div class="">
+        <div id="myFormContent">
+        </div>
+    </div>
+
+    <div class="">
+        @*<table class="table">
+            <tr>
+                <td class="text-right">All Expired <input type="checkbox" id="expirycheck"/> <input type="text" id="currentdatetext" class="hidden"  /> </td>
+            </tr>
+        </table>*@
+      <div class="table-responsive"> 
+        <table id="myDatatable" class="table table-striped table-bordered  table-hover">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product ID</th>
+                    <th>Business Name</th>
+                    <th>Client Detail</th>
+                   @* <th>Client Email </th>
+                    <th>Client Mobile</th>
+                    <th>Client Address</th>*@
+                    <th>Expiry Date</th>
+                    @*<th>For Website</th>*@
+                    <th>Remarks</th>
+
+                    <th>Action</th>
+                </tr>
+            </thead>
+             <tfoot>
+                <tr>
+                    <th>Product Name</th>
+                    <th></th>
+                    <th>Business Name</th>
+                    <th></th>
+                   @* <th> </th>
+                    <th></th>
+                    <th></th>*@
+                    <th></th>
+                    @*<th></th>*@
+                    <th></th>
+                    <th></th>
+
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    </div>
+</div>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        $("#currentdatetext").val('@DateTime.Now');
+
+        var oTableData = {
+            "ajax": {
+                "url": '/User/GetAll',
+                "type": "get",
+                "datatype": "json"
+            },
+           
+            "columns": [
+
+                { "data": "productname", "autoWidth": true },
+                { "data": "productid", "autoWidth": true },
+                { "data": "businessname", "autoWidth": true },
+                { "data": "clientname", "autoWidth": true, "render": function (data, type, row) {
+                    var address = '<div><em>Address:</em>' + row.clientaddress + '</div>';
+                    var email = '<div>' + row.clientemail + '</div>';
+                    var mobile = '<div>' + row.contactmobile + '</div>';
+                    return '<div><em>Name:</em>' + data + '</div>' + address + email + mobile;
+                      
+                    }
+                },
+                //{ "data": "clientemail", "autoWidth": true },
+                //{ "data": "contactmobile", "autoWidth": true },
+                //{ "data": "clientaddress", "autoWidth": true },
+                { "data": "expirydate", "autoWidth": true },
+                //{ "data": "formodule", "autoWidth": true },
+                { "data": "remarks", "autoWidth": true },
+
+                {
+                    "orderable": false,
+                    "data": "recordid",
+                    "width": "auto",
+                    "render": function (data, type, row) {
+                        var locked = '<i class="fa fa-unlock" aria-hidden="true" style="color:green;"></i>';
+                        if (row.userblocked)
+                            locked = '<i class="fa fa-lock" aria-hidden="true" style="color:red;"></i>';
+                        //var passwordl = '<a href="#" data-toggle="modal" data-target="#myModalShow"><i class="fa fa-key" aria-hidden="true"></i>'
+                        var comments = '<a class="" style="margin:0 2px;" href="/UserComments/Index/' + data + '"><i class="fa fa-comments-o" aria-hidden="true"></i></a>';
+                        return '<a class="popup" href="/User/save/' + data + '"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>' +
+                            '<a class="popup" href="/User/Changepassword/' + data + '"><i class="fa fa-shield" aria-hidden="true"></i></a>' +
+                            comments+
+                            locked;
+                    }
+                }
+            ],
+            //"scrollX": true,
+            "columnDefs": [ {
+                "targets": 4,
+                "render": function (value) {
+                    if (value === null) return "";
+
+                    var pattern = /Date\(([^)]+)\)/;
+                    var results = pattern.exec(value);
+                    var dt = new Date(parseFloat(results[1]));
+                    
+                    var months = ["January", "February", "March", "April", "May", "June",
+                        "July", "August", "September", "October", "November", "December"];
+                    return '<span class="hidden">' + dt.getFullYear() + (dt.getMonth() + 1) + dt.getDate() + '</span> '+
+                        dt.getDate() + "-" + (months[dt.getMonth()]) + "-" + dt.getFullYear()+
+                    ' <span class="hidden">' + (dt.getMonth()+1) + "/" + dt.getDate() + "/" + dt.getFullYear() + '</span> ';
+                    ;
+                }
+            } ],
+            "createdRow": function (row, data, dataIndex) {
+                var currentrowval = data["expirydate"];
+                if (currentrowval != null)
+                {
+                    var currentdate = '@DateTime.Now.ToLongDateString()';
+                   
+                    var pattern = /Date\(([^)]+)\)/;
+                    var results = pattern.exec(currentrowval);
+                    var dt = new Date(parseFloat(results[1]));
+                   
+                   
+                    if (Date.parse(dt) <= Date.parse(currentdate)) {
+                       
+                        $(row).addClass('danger');
+                    }
+
+                }
+            },
+            dom: 'lBfrtip',
+            //buttons: [
+            //    'excel', 'pdf', 'print', 'colvis'
+            //],
+            buttons: [
+           {
+               extend: 'copyHtml5',
+               text: '<i class="fa fa-files-o"></i>',
+               titleAttr: 'Copy'
+           },
+           {
+               extend: 'excelHtml5',
+               text: '<i class="fa fa-file-excel-o"></i>',
+               titleAttr: 'Excel'
+           },
+           //{
+           //    extend:    'csvHtml5',
+           //    text:      '<i class="fa fa-file-text-o"></i>',
+           //    titleAttr: 'CSV'
+           //},
+           {
+               extend: 'pdfHtml5',
+               text: '<i class="fa fa-file-pdf-o"></i>',
+               titleAttr: 'PDF'
+           },
+           {
+               extend: 'print',
+               text: '<i class="fa fa-print"></i>',
+               titleAttr: 'Print'
+           },
+           {
+               extend: 'colvis',
+               text: '<i class="fa fa-eye-slash"></i>',
+               titleAttr: 'Column Visibilty'
+           }
+            ],
+            initComplete: function () {
+                this.api().columns([0,2]).every(function () {
+
+                    var column = this;
+                    var select = $('<select><option value=""></option></select>')
+                        .appendTo($(column.footer()).empty())
+                        .on('change', function () {
+                            var val = $.fn.dataTable.util.escapeRegex(
+                                $(this).val()
+                            );
+
+                            column
+                                .search(val ? '^' + val + '$' : '', true, false)
+                                .draw();
+                        });
+
+                    column.data().unique().sort().each(function (d, j) {
+                        select.append('<option value="' + d + '">' + d + '</option>')
+                    });
+
+
+                });
+            },
+                
+    
+        };
+        var savepage = '/User/save/0';
+
+        filldatatable(oTableData, savepage);
+
+
+        
+
+        //$('#exirycheck').click(function () {
+
+        //    table.draw();
+        //});
+       
+     
+    });
+
+//    $.fn.dataTable.ext.search.push(
+//function (settings, data, dataIndex) {
+//    var expirycheckboxval = $('#expirycheck').is(":checked");
+//    var expirydate = data["expirydate"];
+
+//    if (!expirycheckboxval)
+//        return true;
+
+//    return false;
+
+    @*if (expirydate != null) {
+        var currentdate = '@DateTime.Now';
+
+        var pattern = /Date\(([^)]+)\)/;
+        var results = pattern.exec(currentrowval);
+        var dt = new Date(parseFloat(results[1]));
+
+        if (Date.parse(dt) <= Date.parse(currentdate)) {
+            return true;
+        }
+        return false;
+    }
+    return false;*@
+
+    //var min = parseInt($('#min').val(), 10);
+    //var max = parseInt($('#max').val(), 10);
+
+    //var age = parseFloat(data[3]) || 0; // use data for the age column
+
+    //if ((isNaN(min) && isNaN(max)) ||
+    //     (isNaN(min) && age <= max) ||
+    //     (min <= age && isNaN(max)) ||
+    //     (min <= age && age <= max)) {
+    //    return true;
+    //}
+    //return false;
+//}
+//);
+
+
+    </script>
+
+
+@section scriptsafterbootstrap{
+    @*@Scripts.Render("~/bundles/moment")*@
+ 
+    @Scripts.Render("~/bundles/bootstrapcalender")
+      
+    }
+@section scripts{
+
+    
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.bootstrap.min.js"></script>
+
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.flash.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.27/build/pdfmake.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.27/build/vfs_fonts.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.print.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.colVis.min.js"></script>
+
+    }

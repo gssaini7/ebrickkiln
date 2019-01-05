@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+@*<html lang="en">*@
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>@ViewBag.Title - Brick kiln Software, Accounting Software for Brick kiln, Software for fly ash bricks</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="eBrickkiln has lot of new feature which make the software unique then other software.uSofts - Brickkiln manage every process of a brick kiln business like accounting, production, stock, sales ,Jaayee/ Phukayee,Pather ,Nikashi etc . This software was developed under guidance of related business man ,CA ,and accountant. Spend only min 45 minute to get the business on fingertip." />
+    <meta name="keywords" content="Brick kiln Software , Accounting Software for bhatta, Software For bhatta, Accounting Software for fly ash bricks, Software for fly ash bricks, Software for Block and tile Industry, Accounting Software for fly ash bricks, BTK(Bulls Trench Kiln) , Fly Ash Brick , Block and Tiles , Natural High Draft Brick Kiln , High Draft Brick Kiln , Vertical Shaft Brick Kiln , Hoffmans Kiln " />
+    <meta name="author" content="uSofts (Unique Software Solution)" />
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    @Html.Raw(ViewBag.Metatagscustom)
+
+    @Styles.Render("~/Content/animate")
+    @Styles.Render("~/Content/icomoon")
+    @Styles.Render("~/Content/font")
+
+    @Styles.Render("~/Content/bootstrap")
+    @Styles.Render("~/Content/superfish")
+
+     @RenderSection("headerstyle", required: false)
+  
+
+    @Styles.Render("~/Content/ebrickstylestyle")
+
+     @RenderSection("headerstyleafter", required: false)
+
+    
+     @RenderSection("headerscript", required: false)
+
+
+    @Scripts.Render("~/bundles/modernizr")
+     @Scripts.Render("~/bundles/jquery")
+    @*<script src="https://www.google.com/recaptcha/api.js" async defer></script>*@
+
+</head>
+<body>
+
+   
+
+    @Html.Partial("_HeaderWithHomeLink")
+           
+
+
+
+            
+            <div>
+            @RenderSection("featured", required: false)
+            <section>
+                @RenderBody()
+            </section>
+            </div>
+
+
+    @Html.Partial("_Footer")
+
+  
+         
+
+     <div id="back-top" style="display: none;">
+        <a href="#" title="Go to top"><i class="icon-arrow-with-circle-up "></i></a>
+    </div>
+  
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/waypoint")
+    @Scripts.Render("~/bundles/steller")
+
+    @Scripts.Render("~/bundles/ebrickkilnmainscript")
+   
+     @Scripts.Render("~/bundles/jquerydatatable")
+    @Scripts.Render("~/bundles/datatablebootstrap")
+    @Scripts.Render("~/bundles/project")
+
+
+    @RenderSection("scripts", required: false)
+
+        @RenderSection("scriptsafterbootstrap", required: false)
+
+</body>
+</html>
+
+
+ @* <div class="modal fade" id="myModalShow" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        @Html.Partial("_ChangePassword")
+                    </div>
+                </div>
+            </div>*@

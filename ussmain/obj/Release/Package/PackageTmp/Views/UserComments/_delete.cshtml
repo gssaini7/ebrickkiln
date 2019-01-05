@@ -1,0 +1,31 @@
+﻿
+
+
+
+@using (Html.BeginForm("DeleteConfirm", "UserComments", FormMethod.Post, new { id = "baseForm" }))
+{
+   
+    
+    <div class="panel panel-danger">
+        <div class="panel-heading">
+            <h3 class="panel-title">Are you sure, you want to delete record?
+                
+            </h3>
+        </div>
+       
+        <div class="panel-body">
+          
+             <input type="submit" value="Yes" class="btn btn-success" />
+             <a href="#" onclick="loadblankform('/UserComments/save/0')" class="btn btn-danger">No</a>
+        
+       
+               
+            </div>
+     
+             
+    </div>
+
+    
+}
+
+

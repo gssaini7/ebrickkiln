@@ -1,0 +1,43 @@
+﻿@model R.BusinessEntities.Manager.CommentEntity
+
+
+@using (Html.BeginForm("save", "Comments", FormMethod.Post, new { id = "popupForm" }))
+{
+    if (Model != null && Model.managerid != null)
+    {
+    @Html.HiddenFor(a => a.managerid)
+    }
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Save Comment
+                 <a data-toggle="collapse" data-target="#collapseTwo" 
+           href="#collapseTwo" class="pull-right ">
+                     <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    </a>
+            </h3>
+        </div>
+           <div id="collapseTwo" class="panel-collapse collapse ">
+
+        <div class="panel-body">
+           
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Project Description</label>
+                    @Html.TextAreaFor(a => a.commentdetail, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(a => a.commentdetail)
+                </div>
+            </div>
+           
+            
+        </div>
+        <div class="panel-footer">
+            <input type="submit" value="Save" class="btn btn-success" />
+            <a href="#" onclick="loadblankform('/Manage/Comments/save/')">Cancel</a>
+
+        </div>
+               </div>
+    </div>
+}
+
+

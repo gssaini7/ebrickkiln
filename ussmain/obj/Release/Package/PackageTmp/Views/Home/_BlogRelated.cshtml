@@ -1,0 +1,12 @@
+﻿@model IEnumerable<R.BusinessEntities.BlogModuleModel>
+
+ @if (Model.Any()) { 
+   
+                        
+     foreach (var item in Model)
+     {
+        @Html.ActionLink(item.blogtitle,"BlogDetail", new { id = item.blogkeywords }, new {@class="btn btn-info" })
+     }
+     
+ 
+ }

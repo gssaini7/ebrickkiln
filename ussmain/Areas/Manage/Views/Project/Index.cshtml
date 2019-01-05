@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Project";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+<h1>@ViewBag.Title</h1>
+
+<div  class="tablecontainer">
+
+    <div class="">
+        <div id="myFormContent">
+        </div>
+    </div>
+
+    <div class="">
+        <table id="myDatatable" class="table table-striped table-bordered  table-hover">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Project Name</th>
+                    <th>Project Description</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        var oTableData = {
+            "ajax": {
+                "url": '/Manage/Project/GetAll',
+                "type": "get",
+                "datatype": "json"
+            },
+            "columns": [
+                { "data": "managerid", "width": "20px", },
+                { "data": "projectname", },
+                { "data": "projectdescription", },
+                {
+                    "orderable": false,
+                    "data": "managerid",
+                    "render": function (data, type, row) {
+                        var task = '<a class="" href="/Manage/Task/index/' + data + '"><i class="fa fa-tasks" aria-hidden="true"></i></a>';
+                        return '<a class="popup" href="/Manage/Project/save/' + data + '"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>'
+                        +task;
+                    }
+                }
+            ],
+            "columnDefs": [{
+                "searchable": false,
+                "orderable": false,
+                "targets": 0
+            }],
+            "order": [[1, 'asc']],
+            destroy: true,
+        };
+        var savepage = '/Manage/Project/save/0';
+        filldatatable(oTableData, savepage);
+
+    });
+
+    </script>
+
+
+

@@ -1,0 +1,34 @@
+﻿@model R.BusinessEntities.TagsModel
+
+
+@using (Html.BeginForm("save", "Tags", FormMethod.Post, new { id = "popupForm" }))
+{
+    if (Model != null && Model.tagid > 0)
+    {
+    @Html.HiddenFor(a => a.tagid)
+    }
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Save Tag</h3>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label>Title</label>
+                @Html.TextBoxFor(a => a.tagname, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.tagname)
+            </div>
+        </div>
+        <div class="panel-footer">
+            <input type="submit" value="Save" class="btn btn-success" />
+            <a href="#" onclick="loadblankformpopup('/Tags/save/0')">Clear</a>
+
+        </div>
+    </div>
+   
+  
+    
+}
+
+
+

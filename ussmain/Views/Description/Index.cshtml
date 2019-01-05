@@ -1,0 +1,93 @@
+﻿@{
+    ViewBag.Title = "Support";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+<h1>Support</h1>
+
+<div  class="tablecontainer">
+
+    <div class="">
+        <div id="myFormContent">
+        </div>
+    </div>
+
+    <div class="">
+        <table id="myDatatable" class="table table-striped table-bordered  table-hover">
+            <thead>
+                <tr>
+                    
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Video Link</th>
+                    <th>Remarks</th>
+                     <th>Websites</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        var oTableData = {
+            "ajax": {
+                "url": '/Description/GetAll',
+                "type": "get",
+                "datatype": "json"
+            },
+            "columns": [
+                
+
+                { "data": "Title.titlename",  },
+                { "data": "Category.catname",  },
+                { "data": "descvideolink", },
+                { "data": "descanydescription",  },
+                { "data": "websitemodule",  },
+                {
+                    "orderable": false,
+                    "data": "descriptionid",
+                    
+                    "render": function (data, type, row) {
+                        return '<a class="popup" href="/Description/save/' + data + '"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>';
+                    }
+                }
+            ],
+        };
+        var savepage = '/Description/save/0';
+        filldatatable(oTableData, savepage);
+
+    });
+
+    </script>
+
+
+@*<div class="container">
+
+<div class="dynamicpopupcontainer">
+<a href="/Title/Index" class="dynamicpopup btn btn-default">Open</a>
+</div>
+
+</div>*@
+ <!-- modal placeholder-->
+    @*<div id='myModal' class='modal fade in '>
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content popupWindow">
+                <div class="modal-body">
+                     <button type="button" class="close customclose" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <div id='myModalContent'></div>
+                </div>
+                
+            </div>
+        </div>
+    </div>*@
+
+
+
+@*@Html.Action("Index", "Title")*@
+@*@Html.Action("Index", "Category")*@
+

@@ -1,0 +1,96 @@
+﻿@{
+    ViewBag.Title = "Comments";
+    //Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    Layout = null;
+}
+
+<div class="container-fluid">
+<h1>@ViewBag.Title</h1>
+
+<div  class="tablecontainerpopup">
+
+    <div class="">
+        <div id="myFormContentPopup">
+        </div>
+    </div>
+
+    <div class="">
+        <table id="popupDatatable" class="table table-striped table-bordered  table-hover" style="width:100% !important;">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Comments</th>
+                    <th>Date</th>
+                    <th>By</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        var oTableData = {
+            "ajax": {
+                "url": '/Manage/Comments/GetAll',
+                "type": "get",
+                "datatype": "json"
+            },
+            "columns": [
+                { "data": "managerid", "width": "20px", },
+                { "data": "commentdetail", },
+                { "data": "LastUpdatedate", },
+                { "data": "CommentedBy.gsusername", },
+                {
+                    "orderable": false,
+                    "data": "managerid",
+                    "render": function (data, type, row) {
+                        
+                        return '<a class="popup" href="/Manage/Comments/save/' + data + '"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>'
+                       ;
+                    }
+                }
+            ],
+            "columnDefs": [{
+                "searchable": false,
+                "orderable": false,
+                "targets": 0
+            }],
+            "columnDefs": [{
+                "targets": 2,
+                "render": function (value) {
+                    if (value === null) return "";
+
+                    var pattern = /Date\(([^)]+)\)/;
+                    var results = pattern.exec(value);
+                    var dt = new Date(parseFloat(results[1]));
+
+                    var months = ["January", "February", "March", "April", "May", "June",
+                        "July", "August", "September", "October", "November", "December"];
+                    return '<span class="hidden">' + dt.getFullYear() + (dt.getMonth() + 1) + dt.getDate() + '</span> ' +
+                        dt.getDate() + "-" + (months[dt.getMonth()]) + "-" + dt.getFullYear() +
+                    ' <span class="hidden">' + (dt.getMonth() + 1) + "/" + dt.getDate() + "/" + dt.getFullYear() + '</span> '
+                    + dt.getHours() + ":" + addZero(dt.getMinutes());
+
+                }
+            }],
+            "order": [[2, 'desc']],
+            destroy: true,
+        };
+        var savepage = '/Manage/Comments/save/0';
+        filldatatablepopup(oTableData, savepage);
+
+    });
+    function addZero(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+    </script>
+
+
+
